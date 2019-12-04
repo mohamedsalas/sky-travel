@@ -15,7 +15,13 @@
 int
 main (int argc, char *argv[])
 {
-  GtkWidget *interface_p;
+  GtkWidget *interface1;
+  GtkWidget *interface2;
+  GtkWidget *interface3;
+  GtkWidget *interface4;
+  GtkWidget *interface5;
+  GtkWidget *interface6;
+  GtkWidget *interface7;
 
 #ifdef ENABLE_NLS
   bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
@@ -33,8 +39,14 @@ main (int argc, char *argv[])
    * (except popup menus), just so that you see something after building
    * the project. Delete any components that you don't want shown initially.
    */
-  interface_p = create_interface_p ();
-  gtk_widget_show (interface_p);
+  interface1 = create_interface1 ();
+  gtk_widget_show (interface1);
+  interface2 = create_interface2 ();
+  interface3 = create_interface3 ();
+  interface4 = create_interface4 ();
+  interface5 = create_interface5 ();
+  interface6 = create_interface6 ();
+  interface7 = create_interface7 ();
 
   gtk_main ();
   return 0;

@@ -27,26 +27,27 @@
   g_object_set_data (G_OBJECT (component), name, widget)
 
 GtkWidget*
-create_interface_p (void)
+create_interface1 (void)
 {
-  GtkWidget *interface_p;
+  GtkWidget *interface1;
   GtkWidget *fixed1;
   GtkWidget *entryLogin;
   GtkWidget *entryMdp;
   GtkWidget *labelMdp;
   GtkWidget *labelNom;
   GtkWidget *label1;
+  GtkWidget *buttonCc;
+  GtkWidget *label63;
   GtkWidget *buttonLogin;
   GtkWidget *buttonnc;
-  GtkWidget *buttonCc;
 
-  interface_p = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_widget_set_size_request (interface_p, 500, 400);
-  gtk_window_set_title (GTK_WINDOW (interface_p), _("window1"));
+  interface1 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_widget_set_size_request (interface1, 500, 400);
+  gtk_window_set_title (GTK_WINDOW (interface1), _("window1"));
 
   fixed1 = gtk_fixed_new ();
   gtk_widget_show (fixed1);
-  gtk_container_add (GTK_CONTAINER (interface_p), fixed1);
+  gtk_container_add (GTK_CONTAINER (interface1), fixed1);
 
   entryLogin = gtk_entry_new ();
   gtk_widget_show (entryLogin);
@@ -76,9 +77,19 @@ create_interface_p (void)
   gtk_fixed_put (GTK_FIXED (fixed1), label1, 8, 272);
   gtk_widget_set_size_request (label1, 216, 40);
 
+  buttonCc = gtk_button_new_with_mnemonic (_("Consulter nos catalogues"));
+  gtk_widget_show (buttonCc);
+  gtk_fixed_put (GTK_FIXED (fixed1), buttonCc, 296, 328);
+  gtk_widget_set_size_request (buttonCc, 200, 32);
+
+  label63 = gtk_label_new ("");
+  gtk_widget_show (label63);
+  gtk_fixed_put (GTK_FIXED (fixed1), label63, 160, 224);
+  gtk_widget_set_size_request (label63, 224, 40);
+
   buttonLogin = gtk_button_new_with_mnemonic (_("login"));
   gtk_widget_show (buttonLogin);
-  gtk_fixed_put (GTK_FIXED (fixed1), buttonLogin, 240, 192);
+  gtk_fixed_put (GTK_FIXED (fixed1), buttonLogin, 240, 176);
   gtk_widget_set_size_request (buttonLogin, 66, 29);
 
   buttonnc = gtk_button_new_with_mnemonic (_("Creer votre compte"));
@@ -86,34 +97,33 @@ create_interface_p (void)
   gtk_fixed_put (GTK_FIXED (fixed1), buttonnc, 48, 320);
   gtk_widget_set_size_request (buttonnc, 144, 40);
 
-  buttonCc = gtk_button_new_with_mnemonic (_("Consulter nos catalogues"));
-  gtk_widget_show (buttonCc);
-  gtk_fixed_put (GTK_FIXED (fixed1), buttonCc, 296, 328);
-  gtk_widget_set_size_request (buttonCc, 200, 32);
-
   g_signal_connect ((gpointer) buttonLogin, "clicked",
                     G_CALLBACK (on_buttonLogin_clicked),
                     NULL);
+  g_signal_connect ((gpointer) buttonnc, "clicked",
+                    G_CALLBACK (on_buttonnc_clicked),
+                    NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (interface_p, interface_p, "interface_p");
-  GLADE_HOOKUP_OBJECT (interface_p, fixed1, "fixed1");
-  GLADE_HOOKUP_OBJECT (interface_p, entryLogin, "entryLogin");
-  GLADE_HOOKUP_OBJECT (interface_p, entryMdp, "entryMdp");
-  GLADE_HOOKUP_OBJECT (interface_p, labelMdp, "labelMdp");
-  GLADE_HOOKUP_OBJECT (interface_p, labelNom, "labelNom");
-  GLADE_HOOKUP_OBJECT (interface_p, label1, "label1");
-  GLADE_HOOKUP_OBJECT (interface_p, buttonLogin, "buttonLogin");
-  GLADE_HOOKUP_OBJECT (interface_p, buttonnc, "buttonnc");
-  GLADE_HOOKUP_OBJECT (interface_p, buttonCc, "buttonCc");
+  GLADE_HOOKUP_OBJECT_NO_REF (interface1, interface1, "interface1");
+  GLADE_HOOKUP_OBJECT (interface1, fixed1, "fixed1");
+  GLADE_HOOKUP_OBJECT (interface1, entryLogin, "entryLogin");
+  GLADE_HOOKUP_OBJECT (interface1, entryMdp, "entryMdp");
+  GLADE_HOOKUP_OBJECT (interface1, labelMdp, "labelMdp");
+  GLADE_HOOKUP_OBJECT (interface1, labelNom, "labelNom");
+  GLADE_HOOKUP_OBJECT (interface1, label1, "label1");
+  GLADE_HOOKUP_OBJECT (interface1, buttonCc, "buttonCc");
+  GLADE_HOOKUP_OBJECT (interface1, label63, "label63");
+  GLADE_HOOKUP_OBJECT (interface1, buttonLogin, "buttonLogin");
+  GLADE_HOOKUP_OBJECT (interface1, buttonnc, "buttonnc");
 
-  return interface_p;
+  return interface1;
 }
 
 GtkWidget*
-create_interface_inscription (void)
+create_interface2 (void)
 {
-  GtkWidget *interface_inscription;
+  GtkWidget *interface2;
   GtkWidget *fixed2;
   GtkWidget *entry1;
   GtkWidget *entry2;
@@ -129,13 +139,13 @@ create_interface_inscription (void)
   GtkWidget *label6;
   GtkWidget *buttonCc2;
 
-  interface_inscription = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_widget_set_size_request (interface_inscription, 450, 400);
-  gtk_window_set_title (GTK_WINDOW (interface_inscription), _("window2"));
+  interface2 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_widget_set_size_request (interface2, 450, 400);
+  gtk_window_set_title (GTK_WINDOW (interface2), _("window2"));
 
   fixed2 = gtk_fixed_new ();
   gtk_widget_show (fixed2);
-  gtk_container_add (GTK_CONTAINER (interface_inscription), fixed2);
+  gtk_container_add (GTK_CONTAINER (interface2), fixed2);
 
   entry1 = gtk_entry_new ();
   gtk_widget_show (entry1);
@@ -208,30 +218,34 @@ create_interface_inscription (void)
   gtk_fixed_put (GTK_FIXED (fixed2), buttonCc2, 376, 352);
   gtk_widget_set_size_request (buttonCc2, 66, 29);
 
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (interface_inscription, interface_inscription, "interface_inscription");
-  GLADE_HOOKUP_OBJECT (interface_inscription, fixed2, "fixed2");
-  GLADE_HOOKUP_OBJECT (interface_inscription, entry1, "entry1");
-  GLADE_HOOKUP_OBJECT (interface_inscription, entry2, "entry2");
-  GLADE_HOOKUP_OBJECT (interface_inscription, entry3, "entry3");
-  GLADE_HOOKUP_OBJECT (interface_inscription, entry4, "entry4");
-  GLADE_HOOKUP_OBJECT (interface_inscription, entry5, "entry5");
-  GLADE_HOOKUP_OBJECT (interface_inscription, entry6, "entry6");
-  GLADE_HOOKUP_OBJECT (interface_inscription, label2, "label2");
-  GLADE_HOOKUP_OBJECT (interface_inscription, label3, "label3");
-  GLADE_HOOKUP_OBJECT (interface_inscription, label4, "label4");
-  GLADE_HOOKUP_OBJECT (interface_inscription, label5, "label5");
-  GLADE_HOOKUP_OBJECT (interface_inscription, label7, "label7");
-  GLADE_HOOKUP_OBJECT (interface_inscription, label6, "label6");
-  GLADE_HOOKUP_OBJECT (interface_inscription, buttonCc2, "buttonCc2");
+  g_signal_connect ((gpointer) buttonCc2, "clicked",
+                    G_CALLBACK (on_buttonCc2_clicked),
+                    NULL);
 
-  return interface_inscription;
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (interface2, interface2, "interface2");
+  GLADE_HOOKUP_OBJECT (interface2, fixed2, "fixed2");
+  GLADE_HOOKUP_OBJECT (interface2, entry1, "entry1");
+  GLADE_HOOKUP_OBJECT (interface2, entry2, "entry2");
+  GLADE_HOOKUP_OBJECT (interface2, entry3, "entry3");
+  GLADE_HOOKUP_OBJECT (interface2, entry4, "entry4");
+  GLADE_HOOKUP_OBJECT (interface2, entry5, "entry5");
+  GLADE_HOOKUP_OBJECT (interface2, entry6, "entry6");
+  GLADE_HOOKUP_OBJECT (interface2, label2, "label2");
+  GLADE_HOOKUP_OBJECT (interface2, label3, "label3");
+  GLADE_HOOKUP_OBJECT (interface2, label4, "label4");
+  GLADE_HOOKUP_OBJECT (interface2, label5, "label5");
+  GLADE_HOOKUP_OBJECT (interface2, label7, "label7");
+  GLADE_HOOKUP_OBJECT (interface2, label6, "label6");
+  GLADE_HOOKUP_OBJECT (interface2, buttonCc2, "buttonCc2");
+
+  return interface2;
 }
 
 GtkWidget*
-create_interface_client (void)
+create_interface3 (void)
 {
-  GtkWidget *interface_client;
+  GtkWidget *interface3;
   GtkWidget *fixed3;
   GtkWidget *notebook1;
   GtkWidget *fixed4;
@@ -239,15 +253,15 @@ create_interface_client (void)
   GtkWidget *label17;
   GtkWidget *label15;
   GtkWidget *label14;
+  GtkWidget *label13;
+  GtkWidget *label19;
   GtkWidget *label20;
   GtkWidget *label21;
   GtkWidget *label22;
+  GtkWidget *label18;
   GtkWidget *buttonMc;
   GtkWidget *buttonDes;
   GtkWidget *buttonDec;
-  GtkWidget *label13;
-  GtkWidget *label19;
-  GtkWidget *label18;
   GtkWidget *label8;
   GtkWidget *fixed5;
   GtkWidget *treeview1;
@@ -266,13 +280,13 @@ create_interface_client (void)
   GtkWidget *fixed8;
   GtkWidget *label12;
 
-  interface_client = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_widget_set_size_request (interface_client, 700, 400);
-  gtk_window_set_title (GTK_WINDOW (interface_client), _("window3"));
+  interface3 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_widget_set_size_request (interface3, 700, 400);
+  gtk_window_set_title (GTK_WINDOW (interface3), _("window3"));
 
   fixed3 = gtk_fixed_new ();
   gtk_widget_show (fixed3);
-  gtk_container_add (GTK_CONTAINER (interface_client), fixed3);
+  gtk_container_add (GTK_CONTAINER (interface3), fixed3);
 
   notebook1 = gtk_notebook_new ();
   gtk_widget_show (notebook1);
@@ -303,6 +317,16 @@ create_interface_client (void)
   gtk_fixed_put (GTK_FIXED (fixed4), label14, 24, 208);
   gtk_widget_set_size_request (label14, 136, 32);
 
+  label13 = gtk_label_new (_("Nom Complet"));
+  gtk_widget_show (label13);
+  gtk_fixed_put (GTK_FIXED (fixed4), label13, 24, 48);
+  gtk_widget_set_size_request (label13, 112, 32);
+
+  label19 = gtk_label_new ("");
+  gtk_widget_show (label19);
+  gtk_fixed_put (GTK_FIXED (fixed4), label19, 192, 96);
+  gtk_widget_set_size_request (label19, 192, 24);
+
   label20 = gtk_label_new ("");
   gtk_widget_show (label20);
   gtk_fixed_put (GTK_FIXED (fixed4), label20, 192, 136);
@@ -318,6 +342,11 @@ create_interface_client (void)
   gtk_fixed_put (GTK_FIXED (fixed4), label22, 192, 208);
   gtk_widget_set_size_request (label22, 192, 24);
 
+  label18 = gtk_label_new ("");
+  gtk_widget_show (label18);
+  gtk_fixed_put (GTK_FIXED (fixed4), label18, 192, 48);
+  gtk_widget_set_size_request (label18, 192, 24);
+
   buttonMc = gtk_button_new_with_mnemonic (_("Modifier"));
   gtk_widget_show (buttonMc);
   gtk_fixed_put (GTK_FIXED (fixed4), buttonMc, 496, 112);
@@ -332,21 +361,6 @@ create_interface_client (void)
   gtk_widget_show (buttonDec);
   gtk_fixed_put (GTK_FIXED (fixed4), buttonDec, 472, 288);
   gtk_widget_set_size_request (buttonDec, 130, 37);
-
-  label13 = gtk_label_new (_("Nom Complet"));
-  gtk_widget_show (label13);
-  gtk_fixed_put (GTK_FIXED (fixed4), label13, 24, 48);
-  gtk_widget_set_size_request (label13, 112, 32);
-
-  label19 = gtk_label_new ("");
-  gtk_widget_show (label19);
-  gtk_fixed_put (GTK_FIXED (fixed4), label19, 192, 96);
-  gtk_widget_set_size_request (label19, 192, 24);
-
-  label18 = gtk_label_new ("");
-  gtk_widget_show (label18);
-  gtk_fixed_put (GTK_FIXED (fixed4), label18, 192, 48);
-  gtk_widget_set_size_request (label18, 192, 24);
 
   label8 = gtk_label_new (_("Compte"));
   gtk_widget_show (label8);
@@ -427,49 +441,59 @@ create_interface_client (void)
   gtk_widget_show (label12);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook1), 4), label12);
 
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (interface_client, interface_client, "interface_client");
-  GLADE_HOOKUP_OBJECT (interface_client, fixed3, "fixed3");
-  GLADE_HOOKUP_OBJECT (interface_client, notebook1, "notebook1");
-  GLADE_HOOKUP_OBJECT (interface_client, fixed4, "fixed4");
-  GLADE_HOOKUP_OBJECT (interface_client, label16, "label16");
-  GLADE_HOOKUP_OBJECT (interface_client, label17, "label17");
-  GLADE_HOOKUP_OBJECT (interface_client, label15, "label15");
-  GLADE_HOOKUP_OBJECT (interface_client, label14, "label14");
-  GLADE_HOOKUP_OBJECT (interface_client, label20, "label20");
-  GLADE_HOOKUP_OBJECT (interface_client, label21, "label21");
-  GLADE_HOOKUP_OBJECT (interface_client, label22, "label22");
-  GLADE_HOOKUP_OBJECT (interface_client, buttonMc, "buttonMc");
-  GLADE_HOOKUP_OBJECT (interface_client, buttonDes, "buttonDes");
-  GLADE_HOOKUP_OBJECT (interface_client, buttonDec, "buttonDec");
-  GLADE_HOOKUP_OBJECT (interface_client, label13, "label13");
-  GLADE_HOOKUP_OBJECT (interface_client, label19, "label19");
-  GLADE_HOOKUP_OBJECT (interface_client, label18, "label18");
-  GLADE_HOOKUP_OBJECT (interface_client, label8, "label8");
-  GLADE_HOOKUP_OBJECT (interface_client, fixed5, "fixed5");
-  GLADE_HOOKUP_OBJECT (interface_client, treeview1, "treeview1");
-  GLADE_HOOKUP_OBJECT (interface_client, comboboxtype, "comboboxtype");
-  GLADE_HOOKUP_OBJECT (interface_client, comboboxchoix, "comboboxchoix");
-  GLADE_HOOKUP_OBJECT (interface_client, buttonAr, "buttonAr");
-  GLADE_HOOKUP_OBJECT (interface_client, label9, "label9");
-  GLADE_HOOKUP_OBJECT (interface_client, fixed6, "fixed6");
-  GLADE_HOOKUP_OBJECT (interface_client, treeview2, "treeview2");
-  GLADE_HOOKUP_OBJECT (interface_client, combocr, "combocr");
-  GLADE_HOOKUP_OBJECT (interface_client, buttonmr, "buttonmr");
-  GLADE_HOOKUP_OBJECT (interface_client, buttonsr, "buttonsr");
-  GLADE_HOOKUP_OBJECT (interface_client, label10, "label10");
-  GLADE_HOOKUP_OBJECT (interface_client, fixed7, "fixed7");
-  GLADE_HOOKUP_OBJECT (interface_client, label11, "label11");
-  GLADE_HOOKUP_OBJECT (interface_client, fixed8, "fixed8");
-  GLADE_HOOKUP_OBJECT (interface_client, label12, "label12");
+  g_signal_connect ((gpointer) buttonMc, "clicked",
+                    G_CALLBACK (on_buttonMc_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonDes, "clicked",
+                    G_CALLBACK (on_buttonDes_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonDec, "clicked",
+                    G_CALLBACK (on_buttonDec_clicked),
+                    NULL);
 
-  return interface_client;
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (interface3, interface3, "interface3");
+  GLADE_HOOKUP_OBJECT (interface3, fixed3, "fixed3");
+  GLADE_HOOKUP_OBJECT (interface3, notebook1, "notebook1");
+  GLADE_HOOKUP_OBJECT (interface3, fixed4, "fixed4");
+  GLADE_HOOKUP_OBJECT (interface3, label16, "label16");
+  GLADE_HOOKUP_OBJECT (interface3, label17, "label17");
+  GLADE_HOOKUP_OBJECT (interface3, label15, "label15");
+  GLADE_HOOKUP_OBJECT (interface3, label14, "label14");
+  GLADE_HOOKUP_OBJECT (interface3, label13, "label13");
+  GLADE_HOOKUP_OBJECT (interface3, label19, "label19");
+  GLADE_HOOKUP_OBJECT (interface3, label20, "label20");
+  GLADE_HOOKUP_OBJECT (interface3, label21, "label21");
+  GLADE_HOOKUP_OBJECT (interface3, label22, "label22");
+  GLADE_HOOKUP_OBJECT (interface3, label18, "label18");
+  GLADE_HOOKUP_OBJECT (interface3, buttonMc, "buttonMc");
+  GLADE_HOOKUP_OBJECT (interface3, buttonDes, "buttonDes");
+  GLADE_HOOKUP_OBJECT (interface3, buttonDec, "buttonDec");
+  GLADE_HOOKUP_OBJECT (interface3, label8, "label8");
+  GLADE_HOOKUP_OBJECT (interface3, fixed5, "fixed5");
+  GLADE_HOOKUP_OBJECT (interface3, treeview1, "treeview1");
+  GLADE_HOOKUP_OBJECT (interface3, comboboxtype, "comboboxtype");
+  GLADE_HOOKUP_OBJECT (interface3, comboboxchoix, "comboboxchoix");
+  GLADE_HOOKUP_OBJECT (interface3, buttonAr, "buttonAr");
+  GLADE_HOOKUP_OBJECT (interface3, label9, "label9");
+  GLADE_HOOKUP_OBJECT (interface3, fixed6, "fixed6");
+  GLADE_HOOKUP_OBJECT (interface3, treeview2, "treeview2");
+  GLADE_HOOKUP_OBJECT (interface3, combocr, "combocr");
+  GLADE_HOOKUP_OBJECT (interface3, buttonmr, "buttonmr");
+  GLADE_HOOKUP_OBJECT (interface3, buttonsr, "buttonsr");
+  GLADE_HOOKUP_OBJECT (interface3, label10, "label10");
+  GLADE_HOOKUP_OBJECT (interface3, fixed7, "fixed7");
+  GLADE_HOOKUP_OBJECT (interface3, label11, "label11");
+  GLADE_HOOKUP_OBJECT (interface3, fixed8, "fixed8");
+  GLADE_HOOKUP_OBJECT (interface3, label12, "label12");
+
+  return interface3;
 }
 
 GtkWidget*
-create_interface_admin (void)
+create_interface4 (void)
 {
-  GtkWidget *interface_admin;
+  GtkWidget *interface4;
   GtkWidget *fixed9;
   GtkWidget *notebook2;
   GtkWidget *fixed10;
@@ -478,14 +502,14 @@ create_interface_admin (void)
   GtkWidget *label26;
   GtkWidget *label27;
   GtkWidget *label28;
+  GtkWidget *label33;
+  GtkWidget *label29;
   GtkWidget *label30;
   GtkWidget *label31;
   GtkWidget *label32;
-  GtkWidget *label33;
+  GtkWidget *label666;
   GtkWidget *buttonMca;
   GtkWidget *buttonDeca;
-  GtkWidget *label29;
-  GtkWidget *label;
   GtkWidget *label23;
   GtkWidget *fixed11;
   GtkWidget *treeview3;
@@ -494,12 +518,12 @@ create_interface_admin (void)
   GtkWidget *buttonsa;
   GtkWidget *label24;
 
-  interface_admin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (interface_admin), _("window1"));
+  interface4 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (interface4), _("window4"));
 
   fixed9 = gtk_fixed_new ();
   gtk_widget_show (fixed9);
-  gtk_container_add (GTK_CONTAINER (interface_admin), fixed9);
+  gtk_container_add (GTK_CONTAINER (interface4), fixed9);
 
   notebook2 = gtk_notebook_new ();
   gtk_widget_show (notebook2);
@@ -535,6 +559,16 @@ create_interface_admin (void)
   gtk_fixed_put (GTK_FIXED (fixed12), label28, 24, 208);
   gtk_widget_set_size_request (label28, 136, 32);
 
+  label33 = gtk_label_new (_("Nom Complet"));
+  gtk_widget_show (label33);
+  gtk_fixed_put (GTK_FIXED (fixed12), label33, 24, 48);
+  gtk_widget_set_size_request (label33, 112, 32);
+
+  label29 = gtk_label_new ("");
+  gtk_widget_show (label29);
+  gtk_fixed_put (GTK_FIXED (fixed12), label29, 192, 96);
+  gtk_widget_set_size_request (label29, 192, 24);
+
   label30 = gtk_label_new ("");
   gtk_widget_show (label30);
   gtk_fixed_put (GTK_FIXED (fixed12), label30, 192, 136);
@@ -550,10 +584,10 @@ create_interface_admin (void)
   gtk_fixed_put (GTK_FIXED (fixed12), label32, 192, 208);
   gtk_widget_set_size_request (label32, 192, 24);
 
-  label33 = gtk_label_new (_("Nom Complet"));
-  gtk_widget_show (label33);
-  gtk_fixed_put (GTK_FIXED (fixed12), label33, 24, 48);
-  gtk_widget_set_size_request (label33, 112, 32);
+  label666 = gtk_label_new ("");
+  gtk_widget_show (label666);
+  gtk_fixed_put (GTK_FIXED (fixed12), label666, 192, 48);
+  gtk_widget_set_size_request (label666, 192, 24);
 
   buttonMca = gtk_button_new_with_mnemonic (_("Modifier"));
   gtk_widget_show (buttonMca);
@@ -564,16 +598,6 @@ create_interface_admin (void)
   gtk_widget_show (buttonDeca);
   gtk_fixed_put (GTK_FIXED (fixed12), buttonDeca, 472, 288);
   gtk_widget_set_size_request (buttonDeca, 130, 37);
-
-  label29 = gtk_label_new ("");
-  gtk_widget_show (label29);
-  gtk_fixed_put (GTK_FIXED (fixed12), label29, 192, 96);
-  gtk_widget_set_size_request (label29, 192, 24);
-
-  label = gtk_label_new ("");
-  gtk_widget_show (label);
-  gtk_fixed_put (GTK_FIXED (fixed12), label, 192, 48);
-  gtk_widget_set_size_request (label, 192, 24);
 
   label23 = gtk_label_new (_("Compte"));
   gtk_widget_show (label23);
@@ -607,39 +631,46 @@ create_interface_admin (void)
   gtk_widget_show (label24);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook2), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook2), 1), label24);
 
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (interface_admin, interface_admin, "interface_admin");
-  GLADE_HOOKUP_OBJECT (interface_admin, fixed9, "fixed9");
-  GLADE_HOOKUP_OBJECT (interface_admin, notebook2, "notebook2");
-  GLADE_HOOKUP_OBJECT (interface_admin, fixed10, "fixed10");
-  GLADE_HOOKUP_OBJECT (interface_admin, fixed12, "fixed12");
-  GLADE_HOOKUP_OBJECT (interface_admin, label25, "label25");
-  GLADE_HOOKUP_OBJECT (interface_admin, label26, "label26");
-  GLADE_HOOKUP_OBJECT (interface_admin, label27, "label27");
-  GLADE_HOOKUP_OBJECT (interface_admin, label28, "label28");
-  GLADE_HOOKUP_OBJECT (interface_admin, label30, "label30");
-  GLADE_HOOKUP_OBJECT (interface_admin, label31, "label31");
-  GLADE_HOOKUP_OBJECT (interface_admin, label32, "label32");
-  GLADE_HOOKUP_OBJECT (interface_admin, label33, "label33");
-  GLADE_HOOKUP_OBJECT (interface_admin, buttonMca, "buttonMca");
-  GLADE_HOOKUP_OBJECT (interface_admin, buttonDeca, "buttonDeca");
-  GLADE_HOOKUP_OBJECT (interface_admin, label29, "label29");
-  GLADE_HOOKUP_OBJECT (interface_admin, label, "label");
-  GLADE_HOOKUP_OBJECT (interface_admin, label23, "label23");
-  GLADE_HOOKUP_OBJECT (interface_admin, fixed11, "fixed11");
-  GLADE_HOOKUP_OBJECT (interface_admin, treeview3, "treeview3");
-  GLADE_HOOKUP_OBJECT (interface_admin, buttonaa, "buttonaa");
-  GLADE_HOOKUP_OBJECT (interface_admin, buttonma, "buttonma");
-  GLADE_HOOKUP_OBJECT (interface_admin, buttonsa, "buttonsa");
-  GLADE_HOOKUP_OBJECT (interface_admin, label24, "label24");
+  g_signal_connect ((gpointer) buttonMca, "clicked",
+                    G_CALLBACK (on_buttonMca_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonDeca, "clicked",
+                    G_CALLBACK (on_buttonDeca_clicked),
+                    NULL);
 
-  return interface_admin;
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (interface4, interface4, "interface4");
+  GLADE_HOOKUP_OBJECT (interface4, fixed9, "fixed9");
+  GLADE_HOOKUP_OBJECT (interface4, notebook2, "notebook2");
+  GLADE_HOOKUP_OBJECT (interface4, fixed10, "fixed10");
+  GLADE_HOOKUP_OBJECT (interface4, fixed12, "fixed12");
+  GLADE_HOOKUP_OBJECT (interface4, label25, "label25");
+  GLADE_HOOKUP_OBJECT (interface4, label26, "label26");
+  GLADE_HOOKUP_OBJECT (interface4, label27, "label27");
+  GLADE_HOOKUP_OBJECT (interface4, label28, "label28");
+  GLADE_HOOKUP_OBJECT (interface4, label33, "label33");
+  GLADE_HOOKUP_OBJECT (interface4, label29, "label29");
+  GLADE_HOOKUP_OBJECT (interface4, label30, "label30");
+  GLADE_HOOKUP_OBJECT (interface4, label31, "label31");
+  GLADE_HOOKUP_OBJECT (interface4, label32, "label32");
+  GLADE_HOOKUP_OBJECT (interface4, label666, "label666");
+  GLADE_HOOKUP_OBJECT (interface4, buttonMca, "buttonMca");
+  GLADE_HOOKUP_OBJECT (interface4, buttonDeca, "buttonDeca");
+  GLADE_HOOKUP_OBJECT (interface4, label23, "label23");
+  GLADE_HOOKUP_OBJECT (interface4, fixed11, "fixed11");
+  GLADE_HOOKUP_OBJECT (interface4, treeview3, "treeview3");
+  GLADE_HOOKUP_OBJECT (interface4, buttonaa, "buttonaa");
+  GLADE_HOOKUP_OBJECT (interface4, buttonma, "buttonma");
+  GLADE_HOOKUP_OBJECT (interface4, buttonsa, "buttonsa");
+  GLADE_HOOKUP_OBJECT (interface4, label24, "label24");
+
+  return interface4;
 }
 
 GtkWidget*
-create_interface_prop (void)
+create_interface5 (void)
 {
-  GtkWidget *interface_prop;
+  GtkWidget *interface5;
   GtkWidget *fixed13;
   GtkWidget *notebook3;
   GtkWidget *fixed14;
@@ -647,11 +678,11 @@ create_interface_prop (void)
   GtkWidget *label39;
   GtkWidget *label40;
   GtkWidget *label41;
+  GtkWidget *label45;
+  GtkWidget *label46;
   GtkWidget *label42;
   GtkWidget *label43;
   GtkWidget *label44;
-  GtkWidget *label45;
-  GtkWidget *label46;
   GtkWidget *label47;
   GtkWidget *buttonMcp;
   GtkWidget *buttonDecp;
@@ -660,12 +691,12 @@ create_interface_prop (void)
   GtkWidget *label36;
   GtkWidget *label37;
 
-  interface_prop = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (interface_prop), _("window2"));
+  interface5 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (interface5), _("window5"));
 
   fixed13 = gtk_fixed_new ();
   gtk_widget_show (fixed13);
-  gtk_container_add (GTK_CONTAINER (interface_prop), fixed13);
+  gtk_container_add (GTK_CONTAINER (interface5), fixed13);
 
   notebook3 = gtk_notebook_new ();
   gtk_widget_show (notebook3);
@@ -696,6 +727,16 @@ create_interface_prop (void)
   gtk_fixed_put (GTK_FIXED (fixed14), label41, 24, 208);
   gtk_widget_set_size_request (label41, 136, 32);
 
+  label45 = gtk_label_new (_("Nom Complet"));
+  gtk_widget_show (label45);
+  gtk_fixed_put (GTK_FIXED (fixed14), label45, 24, 48);
+  gtk_widget_set_size_request (label45, 112, 32);
+
+  label46 = gtk_label_new ("");
+  gtk_widget_show (label46);
+  gtk_fixed_put (GTK_FIXED (fixed14), label46, 192, 96);
+  gtk_widget_set_size_request (label46, 192, 24);
+
   label42 = gtk_label_new ("");
   gtk_widget_show (label42);
   gtk_fixed_put (GTK_FIXED (fixed14), label42, 192, 136);
@@ -710,16 +751,6 @@ create_interface_prop (void)
   gtk_widget_show (label44);
   gtk_fixed_put (GTK_FIXED (fixed14), label44, 192, 208);
   gtk_widget_set_size_request (label44, 192, 24);
-
-  label45 = gtk_label_new (_("Nom Complet"));
-  gtk_widget_show (label45);
-  gtk_fixed_put (GTK_FIXED (fixed14), label45, 24, 48);
-  gtk_widget_set_size_request (label45, 112, 32);
-
-  label46 = gtk_label_new ("");
-  gtk_widget_show (label46);
-  gtk_fixed_put (GTK_FIXED (fixed14), label46, 192, 96);
-  gtk_widget_set_size_request (label46, 192, 24);
 
   label47 = gtk_label_new ("");
   gtk_widget_show (label47);
@@ -756,34 +787,41 @@ create_interface_prop (void)
   gtk_widget_show (label37);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 2), label37);
 
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (interface_prop, interface_prop, "interface_prop");
-  GLADE_HOOKUP_OBJECT (interface_prop, fixed13, "fixed13");
-  GLADE_HOOKUP_OBJECT (interface_prop, notebook3, "notebook3");
-  GLADE_HOOKUP_OBJECT (interface_prop, fixed14, "fixed14");
-  GLADE_HOOKUP_OBJECT (interface_prop, label38, "label38");
-  GLADE_HOOKUP_OBJECT (interface_prop, label39, "label39");
-  GLADE_HOOKUP_OBJECT (interface_prop, label40, "label40");
-  GLADE_HOOKUP_OBJECT (interface_prop, label41, "label41");
-  GLADE_HOOKUP_OBJECT (interface_prop, label42, "label42");
-  GLADE_HOOKUP_OBJECT (interface_prop, label43, "label43");
-  GLADE_HOOKUP_OBJECT (interface_prop, label44, "label44");
-  GLADE_HOOKUP_OBJECT (interface_prop, label45, "label45");
-  GLADE_HOOKUP_OBJECT (interface_prop, label46, "label46");
-  GLADE_HOOKUP_OBJECT (interface_prop, label47, "label47");
-  GLADE_HOOKUP_OBJECT (interface_prop, buttonMcp, "buttonMcp");
-  GLADE_HOOKUP_OBJECT (interface_prop, buttonDecp, "buttonDecp");
-  GLADE_HOOKUP_OBJECT (interface_prop, label35, "label35");
-  GLADE_HOOKUP_OBJECT (interface_prop, label36, "label36");
-  GLADE_HOOKUP_OBJECT (interface_prop, label37, "label37");
+  g_signal_connect ((gpointer) buttonMcp, "clicked",
+                    G_CALLBACK (on_buttonMcp_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonDecp, "clicked",
+                    G_CALLBACK (on_buttonDecp_clicked),
+                    NULL);
 
-  return interface_prop;
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (interface5, interface5, "interface5");
+  GLADE_HOOKUP_OBJECT (interface5, fixed13, "fixed13");
+  GLADE_HOOKUP_OBJECT (interface5, notebook3, "notebook3");
+  GLADE_HOOKUP_OBJECT (interface5, fixed14, "fixed14");
+  GLADE_HOOKUP_OBJECT (interface5, label38, "label38");
+  GLADE_HOOKUP_OBJECT (interface5, label39, "label39");
+  GLADE_HOOKUP_OBJECT (interface5, label40, "label40");
+  GLADE_HOOKUP_OBJECT (interface5, label41, "label41");
+  GLADE_HOOKUP_OBJECT (interface5, label45, "label45");
+  GLADE_HOOKUP_OBJECT (interface5, label46, "label46");
+  GLADE_HOOKUP_OBJECT (interface5, label42, "label42");
+  GLADE_HOOKUP_OBJECT (interface5, label43, "label43");
+  GLADE_HOOKUP_OBJECT (interface5, label44, "label44");
+  GLADE_HOOKUP_OBJECT (interface5, label47, "label47");
+  GLADE_HOOKUP_OBJECT (interface5, buttonMcp, "buttonMcp");
+  GLADE_HOOKUP_OBJECT (interface5, buttonDecp, "buttonDecp");
+  GLADE_HOOKUP_OBJECT (interface5, label35, "label35");
+  GLADE_HOOKUP_OBJECT (interface5, label36, "label36");
+  GLADE_HOOKUP_OBJECT (interface5, label37, "label37");
+
+  return interface5;
 }
 
 GtkWidget*
-create_interface_agent (void)
+create_interface6 (void)
 {
-  GtkWidget *interface_agent;
+  GtkWidget *interface6;
   GtkWidget *fixed15;
   GtkWidget *notebook4;
   GtkWidget *fixed16;
@@ -792,12 +830,12 @@ create_interface_agent (void)
   GtkWidget *label54;
   GtkWidget *label55;
   GtkWidget *label56;
+  GtkWidget *label60;
+  GtkWidget *label62;
+  GtkWidget *label61;
   GtkWidget *label57;
   GtkWidget *label58;
   GtkWidget *label59;
-  GtkWidget *label60;
-  GtkWidget *label61;
-  GtkWidget *label62;
   GtkWidget *buttonMcag;
   GtkWidget *buttonDecag;
   GtkWidget *label48;
@@ -812,12 +850,12 @@ create_interface_agent (void)
   GtkWidget *label51;
   GtkWidget *label52;
 
-  interface_agent = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (interface_agent), _("window3"));
+  interface6 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (interface6), _("window6"));
 
   fixed15 = gtk_fixed_new ();
   gtk_widget_show (fixed15);
-  gtk_container_add (GTK_CONTAINER (interface_agent), fixed15);
+  gtk_container_add (GTK_CONTAINER (interface6), fixed15);
 
   notebook4 = gtk_notebook_new ();
   gtk_widget_show (notebook4);
@@ -853,6 +891,21 @@ create_interface_agent (void)
   gtk_fixed_put (GTK_FIXED (fixed18), label56, 24, 208);
   gtk_widget_set_size_request (label56, 136, 32);
 
+  label60 = gtk_label_new (_("Nom Complet"));
+  gtk_widget_show (label60);
+  gtk_fixed_put (GTK_FIXED (fixed18), label60, 24, 48);
+  gtk_widget_set_size_request (label60, 112, 32);
+
+  label62 = gtk_label_new ("");
+  gtk_widget_show (label62);
+  gtk_fixed_put (GTK_FIXED (fixed18), label62, 192, 48);
+  gtk_widget_set_size_request (label62, 192, 24);
+
+  label61 = gtk_label_new ("");
+  gtk_widget_show (label61);
+  gtk_fixed_put (GTK_FIXED (fixed18), label61, 192, 96);
+  gtk_widget_set_size_request (label61, 192, 24);
+
   label57 = gtk_label_new ("");
   gtk_widget_show (label57);
   gtk_fixed_put (GTK_FIXED (fixed18), label57, 192, 136);
@@ -867,21 +920,6 @@ create_interface_agent (void)
   gtk_widget_show (label59);
   gtk_fixed_put (GTK_FIXED (fixed18), label59, 192, 208);
   gtk_widget_set_size_request (label59, 192, 24);
-
-  label60 = gtk_label_new (_("Nom Complet"));
-  gtk_widget_show (label60);
-  gtk_fixed_put (GTK_FIXED (fixed18), label60, 24, 48);
-  gtk_widget_set_size_request (label60, 112, 32);
-
-  label61 = gtk_label_new ("");
-  gtk_widget_show (label61);
-  gtk_fixed_put (GTK_FIXED (fixed18), label61, 192, 96);
-  gtk_widget_set_size_request (label61, 192, 24);
-
-  label62 = gtk_label_new ("");
-  gtk_widget_show (label62);
-  gtk_fixed_put (GTK_FIXED (fixed18), label62, 192, 48);
-  gtk_widget_set_size_request (label62, 192, 24);
 
   buttonMcag = gtk_button_new_with_mnemonic (_("Modifier"));
   gtk_widget_show (buttonMcag);
@@ -949,35 +987,136 @@ create_interface_agent (void)
   gtk_widget_show (label52);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook4), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook4), 4), label52);
 
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (interface_agent, interface_agent, "interface_agent");
-  GLADE_HOOKUP_OBJECT (interface_agent, fixed15, "fixed15");
-  GLADE_HOOKUP_OBJECT (interface_agent, notebook4, "notebook4");
-  GLADE_HOOKUP_OBJECT (interface_agent, fixed16, "fixed16");
-  GLADE_HOOKUP_OBJECT (interface_agent, fixed18, "fixed18");
-  GLADE_HOOKUP_OBJECT (interface_agent, label53, "label53");
-  GLADE_HOOKUP_OBJECT (interface_agent, label54, "label54");
-  GLADE_HOOKUP_OBJECT (interface_agent, label55, "label55");
-  GLADE_HOOKUP_OBJECT (interface_agent, label56, "label56");
-  GLADE_HOOKUP_OBJECT (interface_agent, label57, "label57");
-  GLADE_HOOKUP_OBJECT (interface_agent, label58, "label58");
-  GLADE_HOOKUP_OBJECT (interface_agent, label59, "label59");
-  GLADE_HOOKUP_OBJECT (interface_agent, label60, "label60");
-  GLADE_HOOKUP_OBJECT (interface_agent, label61, "label61");
-  GLADE_HOOKUP_OBJECT (interface_agent, label62, "label62");
-  GLADE_HOOKUP_OBJECT (interface_agent, buttonMcag, "buttonMcag");
-  GLADE_HOOKUP_OBJECT (interface_agent, buttonDecag, "buttonDecag");
-  GLADE_HOOKUP_OBJECT (interface_agent, label48, "label48");
-  GLADE_HOOKUP_OBJECT (interface_agent, fixed17, "fixed17");
-  GLADE_HOOKUP_OBJECT (interface_agent, treeview4, "treeview4");
-  GLADE_HOOKUP_OBJECT (interface_agent, buttonagac, "buttonagac");
-  GLADE_HOOKUP_OBJECT (interface_agent, buttonagmc, "buttonagmc");
-  GLADE_HOOKUP_OBJECT (interface_agent, buttonagsc, "buttonagsc");
-  GLADE_HOOKUP_OBJECT (interface_agent, label49, "label49");
-  GLADE_HOOKUP_OBJECT (interface_agent, label50, "label50");
-  GLADE_HOOKUP_OBJECT (interface_agent, label51, "label51");
-  GLADE_HOOKUP_OBJECT (interface_agent, label52, "label52");
+  g_signal_connect ((gpointer) buttonMcag, "clicked",
+                    G_CALLBACK (on_buttonMcag_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonDecag, "clicked",
+                    G_CALLBACK (on_buttonDecag_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonagac, "clicked",
+                    G_CALLBACK (on_buttonagac_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonagmc, "clicked",
+                    G_CALLBACK (on_buttonagmc_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonagsc, "clicked",
+                    G_CALLBACK (on_buttonagsc_clicked),
+                    NULL);
 
-  return interface_agent;
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (interface6, interface6, "interface6");
+  GLADE_HOOKUP_OBJECT (interface6, fixed15, "fixed15");
+  GLADE_HOOKUP_OBJECT (interface6, notebook4, "notebook4");
+  GLADE_HOOKUP_OBJECT (interface6, fixed16, "fixed16");
+  GLADE_HOOKUP_OBJECT (interface6, fixed18, "fixed18");
+  GLADE_HOOKUP_OBJECT (interface6, label53, "label53");
+  GLADE_HOOKUP_OBJECT (interface6, label54, "label54");
+  GLADE_HOOKUP_OBJECT (interface6, label55, "label55");
+  GLADE_HOOKUP_OBJECT (interface6, label56, "label56");
+  GLADE_HOOKUP_OBJECT (interface6, label60, "label60");
+  GLADE_HOOKUP_OBJECT (interface6, label62, "label62");
+  GLADE_HOOKUP_OBJECT (interface6, label61, "label61");
+  GLADE_HOOKUP_OBJECT (interface6, label57, "label57");
+  GLADE_HOOKUP_OBJECT (interface6, label58, "label58");
+  GLADE_HOOKUP_OBJECT (interface6, label59, "label59");
+  GLADE_HOOKUP_OBJECT (interface6, buttonMcag, "buttonMcag");
+  GLADE_HOOKUP_OBJECT (interface6, buttonDecag, "buttonDecag");
+  GLADE_HOOKUP_OBJECT (interface6, label48, "label48");
+  GLADE_HOOKUP_OBJECT (interface6, fixed17, "fixed17");
+  GLADE_HOOKUP_OBJECT (interface6, treeview4, "treeview4");
+  GLADE_HOOKUP_OBJECT (interface6, buttonagac, "buttonagac");
+  GLADE_HOOKUP_OBJECT (interface6, buttonagmc, "buttonagmc");
+  GLADE_HOOKUP_OBJECT (interface6, buttonagsc, "buttonagsc");
+  GLADE_HOOKUP_OBJECT (interface6, label49, "label49");
+  GLADE_HOOKUP_OBJECT (interface6, label50, "label50");
+  GLADE_HOOKUP_OBJECT (interface6, label51, "label51");
+  GLADE_HOOKUP_OBJECT (interface6, label52, "label52");
+
+  return interface6;
+}
+
+GtkWidget*
+create_interface7 (void)
+{
+  GtkWidget *interface7;
+  GtkWidget *fixed19;
+  GtkWidget *entry7;
+  GtkWidget *entry8;
+  GtkWidget *label670;
+  GtkWidget *label668;
+  GtkWidget *label667;
+  GtkWidget *buttoncdes;
+  GtkWidget *buttonrdes;
+  GtkWidget *label669;
+
+  interface7 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (interface7), _("window1"));
+
+  fixed19 = gtk_fixed_new ();
+  gtk_widget_show (fixed19);
+  gtk_container_add (GTK_CONTAINER (interface7), fixed19);
+
+  entry7 = gtk_entry_new ();
+  gtk_widget_show (entry7);
+  gtk_fixed_put (GTK_FIXED (fixed19), entry7, 168, 80);
+  gtk_widget_set_size_request (entry7, 160, 27);
+  gtk_entry_set_invisible_char (GTK_ENTRY (entry7), 8226);
+
+  entry8 = gtk_entry_new ();
+  gtk_widget_show (entry8);
+  gtk_fixed_put (GTK_FIXED (fixed19), entry8, 168, 136);
+  gtk_widget_set_size_request (entry8, 160, 27);
+  gtk_entry_set_invisible_char (GTK_ENTRY (entry8), 8226);
+
+  label670 = gtk_label_new (_("Priere de confirmer votre d\303\251sabonnement"));
+  gtk_widget_show (label670);
+  gtk_fixed_put (GTK_FIXED (fixed19), label670, 56, 16);
+  gtk_widget_set_size_request (label670, 312, 48);
+
+  label668 = gtk_label_new (_("Password"));
+  gtk_widget_show (label668);
+  gtk_fixed_put (GTK_FIXED (fixed19), label668, 56, 136);
+  gtk_widget_set_size_request (label668, 72, 24);
+
+  label667 = gtk_label_new (_("Login"));
+  gtk_widget_show (label667);
+  gtk_fixed_put (GTK_FIXED (fixed19), label667, 56, 80);
+  gtk_widget_set_size_request (label667, 72, 24);
+
+  buttoncdes = gtk_button_new_with_mnemonic (_("Confirmer :( "));
+  gtk_widget_show (buttoncdes);
+  gtk_fixed_put (GTK_FIXED (fixed19), buttoncdes, 96, 280);
+  gtk_widget_set_size_request (buttoncdes, 112, 37);
+
+  buttonrdes = gtk_button_new_with_mnemonic (_("Retour :)"));
+  gtk_widget_show (buttonrdes);
+  gtk_fixed_put (GTK_FIXED (fixed19), buttonrdes, 240, 280);
+  gtk_widget_set_size_request (buttonrdes, 112, 37);
+
+  label669 = gtk_label_new ("");
+  gtk_widget_show (label669);
+  gtk_fixed_put (GTK_FIXED (fixed19), label669, 48, 192);
+  gtk_widget_set_size_request (label669, 312, 64);
+
+  g_signal_connect ((gpointer) buttoncdes, "clicked",
+                    G_CALLBACK (on_buttoncdes_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonrdes, "clicked",
+                    G_CALLBACK (on_buttonrdes_clicked),
+                    NULL);
+
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (interface7, interface7, "interface7");
+  GLADE_HOOKUP_OBJECT (interface7, fixed19, "fixed19");
+  GLADE_HOOKUP_OBJECT (interface7, entry7, "entry7");
+  GLADE_HOOKUP_OBJECT (interface7, entry8, "entry8");
+  GLADE_HOOKUP_OBJECT (interface7, label670, "label670");
+  GLADE_HOOKUP_OBJECT (interface7, label668, "label668");
+  GLADE_HOOKUP_OBJECT (interface7, label667, "label667");
+  GLADE_HOOKUP_OBJECT (interface7, buttoncdes, "buttoncdes");
+  GLADE_HOOKUP_OBJECT (interface7, buttonrdes, "buttonrdes");
+  GLADE_HOOKUP_OBJECT (interface7, label669, "label669");
+
+  return interface7;
 }
 

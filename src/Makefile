@@ -100,7 +100,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_sky_travel_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT)
+	interface.$(OBJEXT) callbacks.$(OBJEXT) verif.$(OBJEXT)
 sky_travel_OBJECTS = $(am_sky_travel_OBJECTS)
 am__DEPENDENCIES_1 =
 sky_travel_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -160,12 +160,12 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/welfi/Desktop/sky-travel/sky-travel/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/welfi/Desktop/sky-travel/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/welfi/Desktop/sky-travel/sky-travel/missing autoconf
-AUTOHEADER = ${SHELL} /home/welfi/Desktop/sky-travel/sky-travel/missing autoheader
-AUTOMAKE = ${SHELL} /home/welfi/Desktop/sky-travel/sky-travel/missing automake-1.15
+AUTOCONF = ${SHELL} /home/welfi/Desktop/sky-travel/missing autoconf
+AUTOHEADER = ${SHELL} /home/welfi/Desktop/sky-travel/missing autoheader
+AUTOMAKE = ${SHELL} /home/welfi/Desktop/sky-travel/missing automake-1.15
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = .gmo
@@ -200,7 +200,7 @@ LIBOBJS =
 LIBS = 
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/welfi/Desktop/sky-travel/sky-travel/missing makeinfo
+MAKEINFO = ${SHELL} /home/welfi/Desktop/sky-travel/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
@@ -229,10 +229,10 @@ STRIP =
 USE_NLS = yes
 VERSION = 0.1
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /home/welfi/Desktop/sky-travel/sky-travel/src
-abs_srcdir = /home/welfi/Desktop/sky-travel/sky-travel/src
-abs_top_builddir = /home/welfi/Desktop/sky-travel/sky-travel
-abs_top_srcdir = /home/welfi/Desktop/sky-travel/sky-travel
+abs_builddir = /home/welfi/Desktop/sky-travel/src
+abs_srcdir = /home/welfi/Desktop/sky-travel/src
+abs_top_builddir = /home/welfi/Desktop/sky-travel
+abs_top_srcdir = /home/welfi/Desktop/sky-travel
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -251,7 +251,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/welfi/Desktop/sky-travel/sky-travel/install-sh
+install_sh = ${SHELL} /home/welfi/Desktop/sky-travel/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -281,7 +281,8 @@ sky_travel_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
-	callbacks.c callbacks.h
+	callbacks.c callbacks.h \
+	verif.c verif.h
 
 sky_travel_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
 all: all-am
@@ -374,6 +375,7 @@ include ./$(DEPDIR)/callbacks.Po
 include ./$(DEPDIR)/interface.Po
 include ./$(DEPDIR)/main.Po
 include ./$(DEPDIR)/support.Po
+include ./$(DEPDIR)/verif.Po
 
 .c.o:
 	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
