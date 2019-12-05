@@ -1,21 +1,16 @@
 #include <gtk/gtk.h>
 
-
 void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data);
 
 void on_buttonCc2_clicked(GtkWidget *objet_graphique,gpointer user_data);
 
-void
-on_buttonMc_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
+void on_buttonMc_clicked(GtkWidget *button,gpointer user_data);
 
 void on_buttonDes_clicked (GtkWidget *objet_graphique,gpointer user_data);
 
 void on_buttonDec_clicked(GtkWidget *button,gpointer user_data);
 
-void
-on_buttonMca_clicked                   (GtkButton       *button,
-                                        gpointer         user_data);
+void on_buttonMca_clicked(GtkWidget *button,gpointer user_data);
 
 void on_buttonDeca_clicked(GtkWidget *button,gpointer user_data);
 
@@ -48,3 +43,13 @@ void on_buttonnc_clicked (GtkWidget *objet_graphique,gpointer user_data);
 void on_buttoncdes_clicked(GtkWidget *objet_graphique,gpointer user_data);
 
 void on_buttonrdes_clicked(GtkWidget *objet_graphique,gpointer user_data);
+
+void on_buttoncch_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonrch_clicked(GtkWidget *button,gpointer user_data);
+
+void on_button2_clicked(GtkWidget *button,gpointer user_data);
+
+void on_button1_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonaag_clicked(GtkWidget *button,gpointer user_data);

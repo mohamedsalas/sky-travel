@@ -603,9 +603,11 @@ callbacks.o: callbacks.c /usr/include/stdc-predef.h ../config.h \
  /usr/include/gtk-2.0/gtk/gtkoldeditable.h \
  /usr/include/gtk-2.0/gtk/gtkoptionmenu.h \
  /usr/include/gtk-2.0/gtk/gtkpreview.h \
- /usr/include/gtk-2.0/gtk/gtktipsquery.h callbacks.h interface.h \
+ /usr/include/gtk-2.0/gtk/gtktipsquery.h \
+ /usr/include/gtk-2.0/gdk/gdkkeysyms.h \
+ /usr/include/gtk-2.0/gdk/gdkkeysyms-compat.h callbacks.h interface.h \
  support.h /usr/include/libintl.h /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h verif.h
+ /usr/include/x86_64-linux-gnu/bits/locale.h verif.h agents.h
 
 /usr/include/stdc-predef.h:
 
@@ -1947,6 +1949,10 @@ callbacks.o: callbacks.c /usr/include/stdc-predef.h ../config.h \
 
 /usr/include/gtk-2.0/gtk/gtktipsquery.h:
 
+/usr/include/gtk-2.0/gdk/gdkkeysyms.h:
+
+/usr/include/gtk-2.0/gdk/gdkkeysyms-compat.h:
+
 callbacks.h:
 
 interface.h:
@@ -1960,3 +1966,5 @@ support.h:
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
 verif.h:
+
+agents.h:

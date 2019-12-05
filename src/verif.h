@@ -1,3 +1,5 @@
+#include <gtk/gtk.h>
+
 typedef struct nouveau
 {
 	char nom[50];
@@ -9,4 +11,6 @@ typedef struct nouveau
 	int id;
 }nouveau;
 int verif(char login[],char password[]);
-void supp(char *login,char *nom);
+void supprimer(char login[],char password[]);
+void ajouter(nouveau n);
+void afficher_agents(GtkWidget *liste);

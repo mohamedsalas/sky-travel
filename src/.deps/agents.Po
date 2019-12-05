@@ -1,4 +1,5 @@
-verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
+agents.o: agents.c /usr/include/stdc-predef.h ../config.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -17,44 +18,16 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /usr/include/gtk-2.0/gtk/gtkclist.h /usr/include/gtk-2.0/gtk/gtksignal.h \
- /usr/include/gtk-2.0/gtk/gtkenums.h /usr/include/glib-2.0/glib-object.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h agents.h \
+ /usr/include/gtk-2.0/gtk/gtk.h /usr/include/gtk-2.0/gdk/gdk.h \
+ /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
+ /usr/include/glib-2.0/gio/gio.h /usr/include/glib-2.0/gio/giotypes.h \
+ /usr/include/glib-2.0/gio/gioenums.h /usr/include/glib-2.0/glib-object.h \
  /usr/include/glib-2.0/gobject/gbinding.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
@@ -68,13 +41,43 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/float.h \
  /usr/include/glib-2.0/glib/gversionmacros.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
  /usr/include/glib-2.0/glib/gthread.h \
  /usr/include/glib-2.0/glib/gatomic.h /usr/include/glib-2.0/glib/gerror.h \
  /usr/include/glib-2.0/glib/gquark.h /usr/include/glib-2.0/glib/gutils.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+ /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
  /usr/include/glib-2.0/glib/gbacktrace.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
@@ -168,19 +171,7 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/glib-2.0/gobject/gvaluearray.h \
  /usr/include/glib-2.0/gobject/gvaluetypes.h \
  /usr/include/glib-2.0/gobject/gobject-autocleanups.h \
- /usr/include/gtk-2.0/gtk/gtktypeutils.h \
- /usr/include/gtk-2.0/gtk/gtktypebuiltins.h \
- /usr/include/gtk-2.0/gtk/gtkobject.h \
- /usr/lib/x86_64-linux-gnu/gtk-2.0/include/gdkconfig.h \
- /usr/include/gtk-2.0/gtk/gtkdebug.h \
- /usr/include/gtk-2.0/gtk/gtkmarshal.h \
- /usr/include/gtk-2.0/gtk/gtkalignment.h \
- /usr/include/gtk-2.0/gtk/gtkbin.h \
- /usr/include/gtk-2.0/gtk/gtkcontainer.h \
- /usr/include/gtk-2.0/gtk/gtkwidget.h /usr/include/gtk-2.0/gdk/gdk.h \
- /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
- /usr/include/glib-2.0/gio/gio.h /usr/include/glib-2.0/gio/giotypes.h \
- /usr/include/glib-2.0/gio/gioenums.h /usr/include/glib-2.0/gio/gaction.h \
+ /usr/include/glib-2.0/gio/gaction.h \
  /usr/include/glib-2.0/gio/gactiongroup.h \
  /usr/include/glib-2.0/gio/gactiongroupexporter.h \
  /usr/include/glib-2.0/gio/gactionmap.h \
@@ -356,6 +347,7 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/pango-1.0/pango/pango-tabs.h \
  /usr/include/pango-1.0/pango/pango-renderer.h \
  /usr/include/pango-1.0/pango/pango-utils.h \
+ /usr/lib/x86_64-linux-gnu/gtk-2.0/include/gdkconfig.h \
  /usr/include/gtk-2.0/gdk/gdkdisplay.h \
  /usr/include/gtk-2.0/gdk/gdkevents.h /usr/include/gtk-2.0/gdk/gdkcolor.h \
  /usr/include/gtk-2.0/gdk/gdkdnd.h /usr/include/gtk-2.0/gdk/gdkinput.h \
@@ -387,7 +379,17 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/gtk-2.0/gdk/gdktestutils.h \
  /usr/include/gtk-2.0/gdk/gdkwindow.h \
  /usr/include/gtk-2.0/gdk/gdkvisual.h \
+ /usr/include/gtk-2.0/gtk/gtkaboutdialog.h \
+ /usr/include/gtk-2.0/gtk/gtkdialog.h \
+ /usr/include/gtk-2.0/gtk/gtkwindow.h \
  /usr/include/gtk-2.0/gtk/gtkaccelgroup.h \
+ /usr/include/gtk-2.0/gtk/gtkenums.h /usr/include/gtk-2.0/gtk/gtkbin.h \
+ /usr/include/gtk-2.0/gtk/gtkcontainer.h \
+ /usr/include/gtk-2.0/gtk/gtkwidget.h \
+ /usr/include/gtk-2.0/gtk/gtkobject.h \
+ /usr/include/gtk-2.0/gtk/gtktypeutils.h \
+ /usr/include/gtk-2.0/gtk/gtktypebuiltins.h \
+ /usr/include/gtk-2.0/gtk/gtkdebug.h \
  /usr/include/gtk-2.0/gtk/gtkadjustment.h \
  /usr/include/gtk-2.0/gtk/gtkstyle.h \
  /usr/include/gtk-2.0/gtk/gtksettings.h /usr/include/gtk-2.0/gtk/gtkrc.h \
@@ -422,25 +424,17 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/atk-1.0/atk/atktable.h \
  /usr/include/atk-1.0/atk/atktablecell.h \
  /usr/include/atk-1.0/atk/atkmisc.h /usr/include/atk-1.0/atk/atkvalue.h \
- /usr/include/atk-1.0/atk/atkwindow.h /usr/include/gtk-2.0/gtk/gtklabel.h \
- /usr/include/gtk-2.0/gtk/gtkmisc.h /usr/include/gtk-2.0/gtk/gtkwindow.h \
+ /usr/include/atk-1.0/atk/atkwindow.h \
+ /usr/include/gtk-2.0/gtk/gtkaccellabel.h \
+ /usr/include/gtk-2.0/gtk/gtklabel.h /usr/include/gtk-2.0/gtk/gtkmisc.h \
  /usr/include/gtk-2.0/gtk/gtkmenu.h \
  /usr/include/gtk-2.0/gtk/gtkmenushell.h \
- /usr/include/gtk-2.0/gtk/gtkbutton.h /usr/include/gtk-2.0/gtk/gtkimage.h \
- /usr/include/gtk-2.0/gtk/gtkhscrollbar.h \
- /usr/include/gtk-2.0/gtk/gtkscrollbar.h \
- /usr/include/gtk-2.0/gtk/gtkrange.h \
- /usr/include/gtk-2.0/gtk/gtkvscrollbar.h \
- /usr/include/gtk-2.0/gdk/gdkkeysyms.h \
- /usr/include/gtk-2.0/gdk/gdkkeysyms-compat.h \
- /usr/include/gtk-2.0/gtk/gtk.h /usr/include/gtk-2.0/gtk/gtkaboutdialog.h \
- /usr/include/gtk-2.0/gtk/gtkdialog.h \
- /usr/include/gtk-2.0/gtk/gtkaccellabel.h \
  /usr/include/gtk-2.0/gtk/gtkaccelmap.h \
  /usr/include/gtk-2.0/gtk/gtkaccessible.h \
  /usr/include/gtk-2.0/gtk/gtkaction.h \
  /usr/include/gtk-2.0/gtk/gtkactiongroup.h \
  /usr/include/gtk-2.0/gtk/gtkactivatable.h \
+ /usr/include/gtk-2.0/gtk/gtkalignment.h \
  /usr/include/gtk-2.0/gtk/gtkarrow.h \
  /usr/include/gtk-2.0/gtk/gtkaspectframe.h \
  /usr/include/gtk-2.0/gtk/gtkframe.h \
@@ -449,7 +443,10 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/gtk-2.0/gtk/gtkbindings.h \
  /usr/include/gtk-2.0/gtk/gtkbuildable.h \
  /usr/include/gtk-2.0/gtk/gtkbuilder.h \
+ /usr/include/gtk-2.0/gtk/gtkbutton.h /usr/include/gtk-2.0/gtk/gtkimage.h \
  /usr/include/gtk-2.0/gtk/gtkcalendar.h \
+ /usr/include/gtk-2.0/gtk/gtksignal.h \
+ /usr/include/gtk-2.0/gtk/gtkmarshal.h \
  /usr/include/gtk-2.0/gtk/gtkcelleditable.h \
  /usr/include/gtk-2.0/gtk/gtkcelllayout.h \
  /usr/include/gtk-2.0/gtk/gtkcellrenderer.h \
@@ -506,7 +503,9 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/gtk-2.0/gtk/gtkhbbox.h /usr/include/gtk-2.0/gtk/gtkhpaned.h \
  /usr/include/gtk-2.0/gtk/gtkpaned.h /usr/include/gtk-2.0/gtk/gtkhruler.h \
  /usr/include/gtk-2.0/gtk/gtkruler.h /usr/include/gtk-2.0/gtk/gtkhscale.h \
- /usr/include/gtk-2.0/gtk/gtkscale.h \
+ /usr/include/gtk-2.0/gtk/gtkscale.h /usr/include/gtk-2.0/gtk/gtkrange.h \
+ /usr/include/gtk-2.0/gtk/gtkhscrollbar.h \
+ /usr/include/gtk-2.0/gtk/gtkscrollbar.h \
  /usr/include/gtk-2.0/gtk/gtkhseparator.h \
  /usr/include/gtk-2.0/gtk/gtkseparator.h \
  /usr/include/gtk-2.0/gtk/gtkhsv.h \
@@ -557,6 +556,7 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/gtk-2.0/gtk/gtkrecentchooserwidget.h \
  /usr/include/gtk-2.0/gtk/gtkscalebutton.h \
  /usr/include/gtk-2.0/gtk/gtkscrolledwindow.h \
+ /usr/include/gtk-2.0/gtk/gtkvscrollbar.h \
  /usr/include/gtk-2.0/gtk/gtkviewport.h \
  /usr/include/gtk-2.0/gtk/gtkseparatormenuitem.h \
  /usr/include/gtk-2.0/gtk/gtkseparatortoolitem.h \
@@ -592,8 +592,8 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/gtk-2.0/gtk/gtkvseparator.h \
  /usr/include/gtk-2.0/gtk/gtktext.h /usr/include/gtk-2.0/gtk/gtktree.h \
  /usr/include/gtk-2.0/gtk/gtktreeitem.h \
- /usr/include/gtk-2.0/gtk/gtkcombo.h /usr/include/gtk-2.0/gtk/gtkctree.h \
- /usr/include/gtk-2.0/gtk/gtkcurve.h \
+ /usr/include/gtk-2.0/gtk/gtkclist.h /usr/include/gtk-2.0/gtk/gtkcombo.h \
+ /usr/include/gtk-2.0/gtk/gtkctree.h /usr/include/gtk-2.0/gtk/gtkcurve.h \
  /usr/include/gtk-2.0/gtk/gtkfilesel.h \
  /usr/include/gtk-2.0/gtk/gtkgamma.h \
  /usr/include/gtk-2.0/gtk/gtkinputdialog.h \
@@ -603,9 +603,11 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/gtk-2.0/gtk/gtkoldeditable.h \
  /usr/include/gtk-2.0/gtk/gtkoptionmenu.h \
  /usr/include/gtk-2.0/gtk/gtkpreview.h \
- /usr/include/gtk-2.0/gtk/gtktipsquery.h verif.h
+ /usr/include/gtk-2.0/gtk/gtktipsquery.h
 
 /usr/include/stdc-predef.h:
+
+../config.h:
 
 /usr/include/stdio.h:
 
@@ -649,70 +651,6 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/x86_64-linux-gnu/bits/select2.h:
-
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
-
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/alloca.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib.h:
-
 /usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
@@ -725,11 +663,19 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
-/usr/include/gtk-2.0/gtk/gtkclist.h:
+agents.h:
 
-/usr/include/gtk-2.0/gtk/gtksignal.h:
+/usr/include/gtk-2.0/gtk/gtk.h:
 
-/usr/include/gtk-2.0/gtk/gtkenums.h:
+/usr/include/gtk-2.0/gdk/gdk.h:
+
+/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:
+
+/usr/include/glib-2.0/gio/gio.h:
+
+/usr/include/glib-2.0/gio/giotypes.h:
+
+/usr/include/glib-2.0/gio/gioenums.h:
 
 /usr/include/glib-2.0/glib-object.h:
 
@@ -767,7 +713,17 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
@@ -784,6 +740,60 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/glib-2.0/glib/gquark.h:
 
 /usr/include/glib-2.0/glib/gutils.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/glib-2.0/glib/gbacktrace.h:
 
@@ -1000,36 +1010,6 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/glib-2.0/gobject/gvaluetypes.h:
 
 /usr/include/glib-2.0/gobject/gobject-autocleanups.h:
-
-/usr/include/gtk-2.0/gtk/gtktypeutils.h:
-
-/usr/include/gtk-2.0/gtk/gtktypebuiltins.h:
-
-/usr/include/gtk-2.0/gtk/gtkobject.h:
-
-/usr/lib/x86_64-linux-gnu/gtk-2.0/include/gdkconfig.h:
-
-/usr/include/gtk-2.0/gtk/gtkdebug.h:
-
-/usr/include/gtk-2.0/gtk/gtkmarshal.h:
-
-/usr/include/gtk-2.0/gtk/gtkalignment.h:
-
-/usr/include/gtk-2.0/gtk/gtkbin.h:
-
-/usr/include/gtk-2.0/gtk/gtkcontainer.h:
-
-/usr/include/gtk-2.0/gtk/gtkwidget.h:
-
-/usr/include/gtk-2.0/gdk/gdk.h:
-
-/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:
-
-/usr/include/glib-2.0/gio/gio.h:
-
-/usr/include/glib-2.0/gio/giotypes.h:
-
-/usr/include/glib-2.0/gio/gioenums.h:
 
 /usr/include/glib-2.0/gio/gaction.h:
 
@@ -1401,6 +1381,8 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/pango-1.0/pango/pango-utils.h:
 
+/usr/lib/x86_64-linux-gnu/gtk-2.0/include/gdkconfig.h:
+
 /usr/include/gtk-2.0/gdk/gdkdisplay.h:
 
 /usr/include/gtk-2.0/gdk/gdkevents.h:
@@ -1475,7 +1457,29 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/gtk-2.0/gdk/gdkvisual.h:
 
+/usr/include/gtk-2.0/gtk/gtkaboutdialog.h:
+
+/usr/include/gtk-2.0/gtk/gtkdialog.h:
+
+/usr/include/gtk-2.0/gtk/gtkwindow.h:
+
 /usr/include/gtk-2.0/gtk/gtkaccelgroup.h:
+
+/usr/include/gtk-2.0/gtk/gtkenums.h:
+
+/usr/include/gtk-2.0/gtk/gtkbin.h:
+
+/usr/include/gtk-2.0/gtk/gtkcontainer.h:
+
+/usr/include/gtk-2.0/gtk/gtkwidget.h:
+
+/usr/include/gtk-2.0/gtk/gtkobject.h:
+
+/usr/include/gtk-2.0/gtk/gtktypeutils.h:
+
+/usr/include/gtk-2.0/gtk/gtktypebuiltins.h:
+
+/usr/include/gtk-2.0/gtk/gtkdebug.h:
 
 /usr/include/gtk-2.0/gtk/gtkadjustment.h:
 
@@ -1555,39 +1559,15 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/atk-1.0/atk/atkwindow.h:
 
+/usr/include/gtk-2.0/gtk/gtkaccellabel.h:
+
 /usr/include/gtk-2.0/gtk/gtklabel.h:
 
 /usr/include/gtk-2.0/gtk/gtkmisc.h:
 
-/usr/include/gtk-2.0/gtk/gtkwindow.h:
-
 /usr/include/gtk-2.0/gtk/gtkmenu.h:
 
 /usr/include/gtk-2.0/gtk/gtkmenushell.h:
-
-/usr/include/gtk-2.0/gtk/gtkbutton.h:
-
-/usr/include/gtk-2.0/gtk/gtkimage.h:
-
-/usr/include/gtk-2.0/gtk/gtkhscrollbar.h:
-
-/usr/include/gtk-2.0/gtk/gtkscrollbar.h:
-
-/usr/include/gtk-2.0/gtk/gtkrange.h:
-
-/usr/include/gtk-2.0/gtk/gtkvscrollbar.h:
-
-/usr/include/gtk-2.0/gdk/gdkkeysyms.h:
-
-/usr/include/gtk-2.0/gdk/gdkkeysyms-compat.h:
-
-/usr/include/gtk-2.0/gtk/gtk.h:
-
-/usr/include/gtk-2.0/gtk/gtkaboutdialog.h:
-
-/usr/include/gtk-2.0/gtk/gtkdialog.h:
-
-/usr/include/gtk-2.0/gtk/gtkaccellabel.h:
 
 /usr/include/gtk-2.0/gtk/gtkaccelmap.h:
 
@@ -1598,6 +1578,8 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/gtk-2.0/gtk/gtkactiongroup.h:
 
 /usr/include/gtk-2.0/gtk/gtkactivatable.h:
+
+/usr/include/gtk-2.0/gtk/gtkalignment.h:
 
 /usr/include/gtk-2.0/gtk/gtkarrow.h:
 
@@ -1617,7 +1599,15 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/gtk-2.0/gtk/gtkbuilder.h:
 
+/usr/include/gtk-2.0/gtk/gtkbutton.h:
+
+/usr/include/gtk-2.0/gtk/gtkimage.h:
+
 /usr/include/gtk-2.0/gtk/gtkcalendar.h:
+
+/usr/include/gtk-2.0/gtk/gtksignal.h:
+
+/usr/include/gtk-2.0/gtk/gtkmarshal.h:
 
 /usr/include/gtk-2.0/gtk/gtkcelleditable.h:
 
@@ -1743,6 +1733,12 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/gtk-2.0/gtk/gtkscale.h:
 
+/usr/include/gtk-2.0/gtk/gtkrange.h:
+
+/usr/include/gtk-2.0/gtk/gtkhscrollbar.h:
+
+/usr/include/gtk-2.0/gtk/gtkscrollbar.h:
+
 /usr/include/gtk-2.0/gtk/gtkhseparator.h:
 
 /usr/include/gtk-2.0/gtk/gtkseparator.h:
@@ -1847,6 +1843,8 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/gtk-2.0/gtk/gtkscrolledwindow.h:
 
+/usr/include/gtk-2.0/gtk/gtkvscrollbar.h:
+
 /usr/include/gtk-2.0/gtk/gtkviewport.h:
 
 /usr/include/gtk-2.0/gtk/gtkseparatormenuitem.h:
@@ -1921,6 +1919,8 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/gtk-2.0/gtk/gtktreeitem.h:
 
+/usr/include/gtk-2.0/gtk/gtkclist.h:
+
 /usr/include/gtk-2.0/gtk/gtkcombo.h:
 
 /usr/include/gtk-2.0/gtk/gtkctree.h:
@@ -1946,5 +1946,3 @@ verif.o: verif.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/gtk-2.0/gtk/gtkpreview.h:
 
 /usr/include/gtk-2.0/gtk/gtktipsquery.h:
-
-verif.h:

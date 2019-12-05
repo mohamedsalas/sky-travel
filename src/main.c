@@ -22,6 +22,8 @@ main (int argc, char *argv[])
   GtkWidget *interface5;
   GtkWidget *interface6;
   GtkWidget *interface7;
+  GtkWidget *interface8;
+  GtkWidget *interface9;
 
 #ifdef ENABLE_NLS
   bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
@@ -47,6 +49,8 @@ main (int argc, char *argv[])
   interface5 = create_interface5 ();
   interface6 = create_interface6 ();
   interface7 = create_interface7 ();
+  interface8 = create_interface8 ();
+  interface9 = create_interface9 ();
 
   gtk_main ();
   return 0;

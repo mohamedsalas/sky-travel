@@ -100,7 +100,8 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_sky_travel_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) verif.$(OBJEXT)
+	interface.$(OBJEXT) callbacks.$(OBJEXT) verif.$(OBJEXT) \
+	agents.$(OBJEXT)
 sky_travel_OBJECTS = $(am_sky_travel_OBJECTS)
 am__DEPENDENCIES_1 =
 sky_travel_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -282,7 +283,8 @@ sky_travel_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	verif.c verif.h
+	verif.c verif.h \
+	agents.c agents.h
 
 sky_travel_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
@@ -371,6 +373,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/agents.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
