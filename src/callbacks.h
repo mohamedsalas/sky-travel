@@ -53,3 +53,45 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data);
 void on_button1_clicked(GtkWidget *button,gpointer user_data);
 
 void on_buttonaag_clicked(GtkWidget *button,gpointer user_data);
+
+void
+on_buttonaffcat_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonajcat_clicked                 (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonmcat_clicked                  (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonscat_clicked                  (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonrechcat_clicked               (GtkButton       *button,
+                                        gpointer         user_data);
+
+void on_buttonaa_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonsa_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttoncaag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_Buttonraag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttoncsag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonrsag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonrchag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttoncchag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonrmag_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttonmaga_clicked(GtkWidget *button,gpointer user_data);
+
+void on_buttoncmag_clicked(GtkWidget *button,gpointer user_data);

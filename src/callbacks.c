@@ -16,6 +16,7 @@ void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data)
 {
 	FILE*f;
 	FILE*ftemp;
+	FILE*f1;
 	GtkWidget *input1,*input2,*window10,*window20,*window30,*window40,*window50,*window60,*label=NULL;
 	GtkWidget *output1,*output2,*output3,*output4,*output5;
 	char nom[50],login[50],password[50],email[50],cin[50],num[50],mes[100];
@@ -62,6 +63,7 @@ void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data)
 		gtk_label_set_text(GTK_LABEL(output5),num);
 		gtk_widget_show(window30);
 		gtk_widget_destroy(window10);
+		
 	}
 	else if(verf==2)
 	{
@@ -78,6 +80,12 @@ void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data)
 				strcpy(num,n.num);
 				fprintf(ftemp,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
 			}
+			if(n.id==1)
+			{
+				f1=fopen("/home/welfi/Desktop/sky-travel/src/clients.txt","a+");
+				fprintf(f1,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
+				fclose(f1);
+			}	
 		}
 		output1=lookup_widget(window60,"label62");
 		output2=lookup_widget(window60,"label61");
@@ -107,6 +115,12 @@ void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data)
 				strcpy(num,n.num);
 				fprintf(ftemp,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
 			}
+			if(n.id==2)
+			{
+				f1=fopen("/home/welfi/Desktop/sky-travel/src/agents.txt","a+");
+				fprintf(f1,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
+				fclose(f1);
+			}	
 		}
 		output1=lookup_widget(window40,"label666");
 		output2=lookup_widget(window40,"label29");
@@ -237,6 +251,7 @@ void on_buttonDeca_clicked(GtkWidget *button,gpointer user_data)
 	gtk_widget_destroy(window4);
 	window1=create_interface1();
 	gtk_widget_show(window1);
+	remove("/home/welfi/Desktop/sky-travel/src/agents.txt");
 }
 
 
@@ -275,6 +290,7 @@ void on_buttonDecag_clicked(GtkWidget *button,gpointer user_data)
 	gtk_widget_destroy(window6);
 	window1=create_interface1();
 	gtk_widget_show(window1);
+	remove("/home/welfi/Desktop/sky-travel/src/clients.txt");
 }
 
 
@@ -513,8 +529,8 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data)
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
 		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
 		fclose(f);
-		strcpy(n.nom,gtk_entry_get_text(GTK_ENTRY(input1)));
 		supprimer(n.login,n.password);
+		strcpy(n.nom,gtk_entry_get_text(GTK_ENTRY(input1)));
 		ajouter(n);
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","w");
 		fprintf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
@@ -525,8 +541,8 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data)
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
 		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
 		fclose(f);
-		strcpy(n.login,gtk_entry_get_text(GTK_ENTRY(input1)));
 		supprimer(n.login,n.password);
+		strcpy(n.login,gtk_entry_get_text(GTK_ENTRY(input1)));
 		ajouter(n);
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","w");
 		fprintf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
@@ -537,8 +553,8 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data)
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
 		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
 		fclose(f);
-		strcpy(n.password,gtk_entry_get_text(GTK_ENTRY(input1)));
 		supprimer(n.login,n.password);
+		strcpy(n.password,gtk_entry_get_text(GTK_ENTRY(input1)));
 		ajouter(n);
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","w");
 		fprintf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
@@ -549,8 +565,8 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data)
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
 		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
 		fclose(f);
-		strcpy(n.email,gtk_entry_get_text(GTK_ENTRY(input1)));
 		supprimer(n.login,n.password);
+		strcpy(n.email,gtk_entry_get_text(GTK_ENTRY(input1)));
 		ajouter(n);
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","w");
 		fprintf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
@@ -561,8 +577,8 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data)
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
 		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
 		fclose(f);
-		strcpy(n.cin,gtk_entry_get_text(GTK_ENTRY(input1)));
 		supprimer(n.login,n.password);
+		strcpy(n.cin,gtk_entry_get_text(GTK_ENTRY(input1)));
 		ajouter(n);
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","w");
 		fprintf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
@@ -573,16 +589,14 @@ void on_button2_clicked(GtkWidget *button,gpointer user_data)
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
 		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
 		fclose(f);
-		strcpy(n.num,gtk_entry_get_text(GTK_ENTRY(input1)));
 		supprimer(n.login,n.password);
+		strcpy(n.num,gtk_entry_get_text(GTK_ENTRY(input1)));
 		ajouter(n);
 		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","w");
 		fprintf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
 		fclose(f);
 	}
 	gtk_widget_destroy(window9);
-	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
-	fscanf(f,"%s %s %s %s %s %s",n.nom,n.login,n.password,n.email,n.cin,n.num);
 	window4=lookup_widget(button,"interface4");
 	window4=create_interface4();
 	output1=lookup_widget(window4,"label666");
@@ -631,5 +645,418 @@ void on_buttonaag_clicked(GtkWidget *button,gpointer user_data)
 	window4=lookup_widget(button,"interface4");
 	treeview3=lookup_widget(button,"treeview3");
 	afficher_agents(treeview3);
+}
+
+
+void
+on_buttonaffcat_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonajcat_clicked                 (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonmcat_clicked                  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonscat_clicked                  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonrechcat_clicked               (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void on_buttonaa_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window4,*window10;
+	window4=lookup_widget(button,"interface4");
+	window10=lookup_widget(button,"interface10");
+	gtk_widget_destroy(window4);
+	window10=create_interface10();
+	gtk_widget_show(window10);
+}
+
+
+void on_buttonsa_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window4,*window11;
+	window4=lookup_widget(button,"interface4");
+	window11=lookup_widget(button,"interface11");
+	gtk_widget_destroy(window4);
+	window11=create_interface11();
+	gtk_widget_show(window11);
+}
+
+
+void on_buttoncaag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window4,*window10,*input1,*input2,*input3,*input4,*input5,*input6,*output1,*output2,*output3,*output4,*output5;
+	nouveau n;
+	FILE*f;
+	window4=lookup_widget(button,"interface4");	
+	window10=lookup_widget(button,"interface10");
+	input1=lookup_widget(window10,"entry12");
+	input2=lookup_widget(window10,"entry13");
+	input3=lookup_widget(window10,"entry14");
+	input4=lookup_widget(window10,"entry15");
+	input5=lookup_widget(window10,"entry16");
+	input6=lookup_widget(window10,"entry17");
+	strcpy(n.nom,gtk_entry_get_text(GTK_ENTRY(input1)));
+	strcpy(n.login,gtk_entry_get_text(GTK_ENTRY(input2)));
+	strcpy(n.password,gtk_entry_get_text(GTK_ENTRY(input3)));
+	strcpy(n.email,gtk_entry_get_text(GTK_ENTRY(input4)));
+	strcpy(n.cin,gtk_entry_get_text(GTK_ENTRY(input5)));
+	strcpy(n.num,gtk_entry_get_text(GTK_ENTRY(input6)));
+	n.id=2;
+	ajouter(n);
+	ajouter_agent(n);
+	gtk_widget_destroy(window10);
+	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	window4=create_interface4();
+	fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+	output1=lookup_widget(window4,"label666");
+	output2=lookup_widget(window4,"label29");
+	output3=lookup_widget(window4,"label30");
+	output4=lookup_widget(window4,"label31");
+	output5=lookup_widget(window4,"label32");
+	gtk_label_set_text(GTK_LABEL(output1),n.nom);
+	gtk_label_set_text(GTK_LABEL(output2),n.login);
+	gtk_label_set_text(GTK_LABEL(output3),n.email);
+	gtk_label_set_text(GTK_LABEL(output4),n.cin);
+	gtk_label_set_text(GTK_LABEL(output5),n.num);
+	gtk_widget_show(window4);
+	fclose(f);
+}
+
+
+void on_Buttonraag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window10,*window4,*output1,*output2,*output3,*output4,*output5;
+	FILE*f;
+	nouveau n;
+	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	window10=lookup_widget(button,"interface10");
+	window4=lookup_widget(button,"interface4");
+	gtk_widget_destroy(window10);	
+	window4=create_interface4();
+	fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+	output1=lookup_widget(window4,"label666");
+	output2=lookup_widget(window4,"label29");
+	output3=lookup_widget(window4,"label30");
+	output4=lookup_widget(window4,"label31");
+	output5=lookup_widget(window4,"label32");
+	gtk_label_set_text(GTK_LABEL(output1),n.nom);
+	gtk_label_set_text(GTK_LABEL(output2),n.login);
+	gtk_label_set_text(GTK_LABEL(output3),n.email);
+	gtk_label_set_text(GTK_LABEL(output4),n.cin);
+	gtk_label_set_text(GTK_LABEL(output5),n.num);
+	gtk_widget_show(window4);
+	fclose(f);
+}
+
+
+void on_buttoncsag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window4,*window11,*output1,*output2,*output3,*output4,*output5,*input6,*input7;
+	FILE*f;
+	int verf=0;
+	char log[50],pass[50],mes[50];
+	nouveau n;
+	input6=lookup_widget(button,"entry18");
+	input7=lookup_widget(button,"entry19");
+	window11=lookup_widget(button,"interface11");
+	window4=lookup_widget(button,"interface4");
+	strcpy(log,gtk_entry_get_text(GTK_ENTRY(input6)));
+	strcpy(pass,gtk_entry_get_text(GTK_ENTRY(input7)));
+	output1=lookup_widget(window11,"label691");
+	verf=verif(log,pass);
+	if(verf==2)	
+	{	
+		supprimer(log,pass);
+		supprimer_agent(log,pass);
+		window11=create_interface11();
+		gtk_widget_destroy(window4);
+		gtk_widget_show(window11);
+		f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+		window11=lookup_widget(button,"interface11");	
+		window4=lookup_widget(button,"interface4");
+		gtk_widget_destroy(window11);	
+		window4=create_interface4();
+		fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		output1=lookup_widget(window4,"label666");
+		output2=lookup_widget(window4,"label29");
+		output3=lookup_widget(window4,"label30");
+		output4=lookup_widget(window4,"label31");
+		output5=lookup_widget(window4,"label32");
+		gtk_label_set_text(GTK_LABEL(output1),n.nom);
+		gtk_label_set_text(GTK_LABEL(output2),n.login);
+		gtk_label_set_text(GTK_LABEL(output3),n.email);
+		gtk_label_set_text(GTK_LABEL(output4),n.cin);
+		gtk_label_set_text(GTK_LABEL(output5),n.num);
+		gtk_widget_show(window4);
+		fclose(f);
+	}	
+	else
+	{
+		strcpy(mes,"Cet utilisateur n'existe pas");
+		gtk_label_set_text(GTK_LABEL(output1),mes);		
+	}
+}
+
+
+
+void on_buttonrsag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window11,*window4,*output1,*output2,*output3,*output4,*output5;
+	FILE*f;
+	nouveau n;
+	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	window11=lookup_widget(button,"interface11");
+	window4=lookup_widget(button,"interface4");
+	gtk_widget_destroy(window11);	
+	window4=create_interface4();
+	fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+	output1=lookup_widget(window4,"label666");
+	output2=lookup_widget(window4,"label29");
+	output3=lookup_widget(window4,"label30");
+	output4=lookup_widget(window4,"label31");
+	output5=lookup_widget(window4,"label32");
+	gtk_label_set_text(GTK_LABEL(output1),n.nom);
+	gtk_label_set_text(GTK_LABEL(output2),n.login);
+	gtk_label_set_text(GTK_LABEL(output3),n.email);
+	gtk_label_set_text(GTK_LABEL(output4),n.cin);
+	gtk_label_set_text(GTK_LABEL(output5),n.num);
+	gtk_widget_show(window4);
+	fclose(f);
+}
+
+
+void on_buttoncmag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window12,*window13,*output1,*input1,*input2,*input3,*input4,*input5,*input6,*input7;
+	FILE*f;
+	FILE*ftemp;
+	int verf=0;
+	char log[50],pass[50],mes[50];
+	nouveau n;
+	input6=lookup_widget(button,"entry20");
+	input7=lookup_widget(button,"entry21");
+	window12=lookup_widget(button,"interface12");
+	window13=lookup_widget(button,"interface13");
+	strcpy(log,gtk_entry_get_text(GTK_ENTRY(input6)));
+	strcpy(pass,gtk_entry_get_text(GTK_ENTRY(input7)));
+	output1=lookup_widget(window12,"label697");
+	verf=verif(log,pass);
+	if(verf==2)	
+	{	
+		f=fopen("/home/welfi/Desktop/sky-travel/src/agents.txt","r");
+		ftemp=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","w");
+		while(fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id)!=EOF)
+		{
+			if(strcmp(log,n.login)==0 && strcmp(pass,n.password)==0)
+			{
+				fprintf(ftemp,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,n.id);
+			}
+		}
+		fclose(f);
+		fclose(ftemp);
+		window13=create_interface13();
+		gtk_widget_destroy(window12);
+		gtk_widget_show(window13);
+	}	
+	else
+	{
+		strcpy(mes,"Cet agent n'existe pas");
+		gtk_label_set_text(GTK_LABEL(output1),mes);		
+	}
+}
+
+
+void on_buttonrchag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window13,*window4,*output1,*output2,*output3,*output4,*output5;
+	FILE*f;
+	nouveau n;
+	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	window13=lookup_widget(button,"interface13");
+	window4=lookup_widget(button,"interface4");
+	gtk_widget_destroy(window13);	
+	window4=create_interface4();
+	fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+	output1=lookup_widget(window4,"label666");
+	output2=lookup_widget(window4,"label29");
+	output3=lookup_widget(window4,"label30");
+	output4=lookup_widget(window4,"label31");
+	output5=lookup_widget(window4,"label32");
+	gtk_label_set_text(GTK_LABEL(output1),n.nom);
+	gtk_label_set_text(GTK_LABEL(output2),n.login);
+	gtk_label_set_text(GTK_LABEL(output3),n.email);
+	gtk_label_set_text(GTK_LABEL(output4),n.cin);
+	gtk_label_set_text(GTK_LABEL(output5),n.num);
+	gtk_widget_show(window4);
+	fclose(f);
+
+}
+
+
+void on_buttoncchag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window13,*window4,*combobox2,*input1,*output1,*output2,*output3,*output4,*output5;	
+	char mes[50];
+	nouveau n;
+	FILE*f;
+	window4=lookup_widget(button,"interface4");
+	window13=lookup_widget(button,"interface13");
+	combobox2=lookup_widget(window13,"combobox4");
+	input1=lookup_widget(window13,"entry22");
+	strcpy(mes,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)));
+	if(strcmp(mes,"nom")==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","r");
+		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		fclose(f);
+		supprimer(n.login,n.password);
+		supprimer_agent(n.login,n.password);
+		strcpy(n.nom,gtk_entry_get_text(GTK_ENTRY(input1)));
+		ajouter(n);
+		ajouter_agent(n);
+		remove("/home/welfi/Desktop/sky-travel/src/am.txt");
+	}
+	else if(strcmp(mes,"login")==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","r");
+		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		fclose(f);
+		supprimer(n.login,n.password);
+		supprimer_agent(n.login,n.password);
+		strcpy(n.login,gtk_entry_get_text(GTK_ENTRY(input1)));
+		ajouter(n);
+		ajouter_agent(n);
+		remove("/home/welfi/Desktop/sky-travel/src/am.txt");
+	}
+	else if(strcmp(mes,"password")==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","r");
+		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		fclose(f);
+		supprimer(n.login,n.password);
+		supprimer_agent(n.login,n.password);
+		strcpy(n.password,gtk_entry_get_text(GTK_ENTRY(input1)));
+		ajouter(n);
+		ajouter_agent(n);
+		remove("/home/welfi/Desktop/sky-travel/src/am.txt");
+	}
+	else if(strcmp(mes,"email")==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","r");
+		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		fclose(f);
+		supprimer(n.login,n.password);
+		supprimer_agent(n.login,n.password);
+		strcpy(n.email,gtk_entry_get_text(GTK_ENTRY(input1)));
+		ajouter(n);
+		ajouter_agent(n);
+		remove("/home/welfi/Desktop/sky-travel/src/am.txt");
+	}
+	else if(strcmp(mes,"cin")==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","r");
+		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		fclose(f);
+		supprimer(n.login,n.password);
+		supprimer_agent(n.login,n.password);
+		strcpy(n.cin,gtk_entry_get_text(GTK_ENTRY(input1)));
+		ajouter(n);
+		ajouter_agent(n);
+		remove("/home/welfi/Desktop/sky-travel/src/am.txt");
+	}
+	else
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/am.txt","r");
+		fscanf(f,"%s %s %s %s %s %s %d",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+		fclose(f);
+		supprimer(n.login,n.password);
+		supprimer_agent(n.login,n.password);
+		strcpy(n.num,gtk_entry_get_text(GTK_ENTRY(input1)));
+		ajouter(n);
+		ajouter_agent(n);
+		remove("/home/welfi/Desktop/sky-travel/src/am.txt");
+	}
+	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	fscanf(f,"%s %s %s %s %s %s",n.nom,n.login,n.password,n.email,n.cin,n.num);
+	gtk_widget_destroy(window13);
+	window4=lookup_widget(button,"interface4");
+	window4=create_interface4();
+	output1=lookup_widget(window4,"label666");
+	output2=lookup_widget(window4,"label29");
+	output3=lookup_widget(window4,"label30");
+	output4=lookup_widget(window4,"label31");
+	output5=lookup_widget(window4,"label32");
+	gtk_label_set_text(GTK_LABEL(output1),n.nom);
+	gtk_label_set_text(GTK_LABEL(output2),n.login);
+	gtk_label_set_text(GTK_LABEL(output3),n.email);
+	gtk_label_set_text(GTK_LABEL(output4),n.cin);
+	gtk_label_set_text(GTK_LABEL(output5),n.num);		
+	gtk_widget_show(window4);
+}
+
+
+
+void on_buttonrmag_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window12,*window4,*output1,*output2,*output3,*output4,*output5;
+	FILE*f;
+	nouveau n;
+	f=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	window12=lookup_widget(button,"interface12");
+	window4=lookup_widget(button,"interface4");
+	gtk_widget_destroy(window12);	
+	window4=create_interface4();
+	fscanf(f,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+	output1=lookup_widget(window4,"label666");
+	output2=lookup_widget(window4,"label29");
+	output3=lookup_widget(window4,"label30");
+	output4=lookup_widget(window4,"label31");
+	output5=lookup_widget(window4,"label32");
+	gtk_label_set_text(GTK_LABEL(output1),n.nom);
+	gtk_label_set_text(GTK_LABEL(output2),n.login);
+	gtk_label_set_text(GTK_LABEL(output3),n.email);
+	gtk_label_set_text(GTK_LABEL(output4),n.cin);
+	gtk_label_set_text(GTK_LABEL(output5),n.num);
+	gtk_widget_show(window4);
+	fclose(f);
+}
+
+
+void on_buttonmaga_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window4,*window12;
+	window4=lookup_widget(button,"interface4");
+	window12=lookup_widget(button,"interface12");
+	gtk_widget_destroy(window4);
+	window12=create_interface12();
+	gtk_widget_show(window12);
 }
 

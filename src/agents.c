@@ -63,7 +63,7 @@ void afficher_agents(GtkWidget *liste)
 
 	store=gtk_list_store_new(COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 
-	f=fopen("/home/welfi/Desktop/sky-travel/src/personne.txt","r");
+	f=fopen("/home/welfi/Desktop/sky-travel/src/agents.txt","r");
 
 	if(f==NULL)
 	{
@@ -71,7 +71,7 @@ void afficher_agents(GtkWidget *liste)
 	}
 	else
 	{
-		f=fopen("/home/welfi/Desktop/sky-travel/src/personne.txt","r");
+		f=fopen("/home/welfi/Desktop/sky-travel/src/agents.txt","r");
 		while(fscanf(f,"%s %s %s %s %s %s %d\n",nom,login,password,email,cin,num,&id)!=EOF)
 		{
 			gtk_list_store_append(store, &iter);
