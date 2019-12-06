@@ -77,3 +77,27 @@ void supprimer_agent(char login[],char password[])
 	remove("/home/welfi/Desktop/sky-travel/src/agents.txt");
 	rename("/home/welfi/Desktop/sky-travel/src/per.txt","/home/welfi/Desktop/sky-travel/src/agents.txt");
 }
+void supprimerlv(char type[],char nch[])
+{	lv lv;
+	FILE*f;
+	FILE*ftemp;
+	f=fopen("/home/welfi/Desktop/sky-travel/src/lv.txt","r");    
+	ftemp=fopen("/home/welfi/Desktop/sky-travel/src/lvtemp.txt","w");
+	while(fscanf(f,"%s %s %s %s %s\n",lv.type,lv.nch,lv.date_a,lv.date_r,lv.prix)!=EOF)
+    	{
+        	if(strcmp(lv.type,type)!=0 && strcmp(lv.nch,nch)!=0)
+        		{
+            			fprintf(ftemp,"%s %s %s %s %s\n",lv.type,lv.nch,lv.date_a,lv.date_r,lv.prix);
+        		}
+        
+        
+    	}
+
+    
+    	fclose(f);
+    	fclose(ftemp);
+    	remove("/home/welfi/Desktop/sky-travel/src/lv.txt");
+    	rename("/home/welfi/Desktop/sky-travel/src/lvtemp.txt","/home/welfi/Desktop/sky-travel/src/lv.txt");
+    
+}
+

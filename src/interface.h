@@ -15,3 +15,6 @@ GtkWidget* create_interface10 (void);
 GtkWidget* create_interface11 (void);
 GtkWidget* create_interface12 (void);
 GtkWidget* create_interface13 (void);
+GtkWidget* create_interface14 (void);
+GtkWidget* create_interface15 (void);
+GtkWidget* create_interface16 (void);
