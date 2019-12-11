@@ -101,7 +101,7 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_sky_travel_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
 	interface.$(OBJEXT) callbacks.$(OBJEXT) verif.$(OBJEXT) \
-	agents.$(OBJEXT)
+	agents.$(OBJEXT) clients.$(OBJEXT)
 sky_travel_OBJECTS = $(am_sky_travel_OBJECTS)
 am__DEPENDENCIES_1 =
 sky_travel_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -284,7 +284,8 @@ sky_travel_SOURCES = \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
 	verif.c verif.h \
-	agents.c agents.h
+	agents.c agents.h \
+	clients.c clients.h
 
 sky_travel_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
 all: all-am
@@ -375,6 +376,7 @@ distclean-compile:
 
 include ./$(DEPDIR)/agents.Po
 include ./$(DEPDIR)/callbacks.Po
+include ./$(DEPDIR)/clients.Po
 include ./$(DEPDIR)/interface.Po
 include ./$(DEPDIR)/main.Po
 include ./$(DEPDIR)/support.Po

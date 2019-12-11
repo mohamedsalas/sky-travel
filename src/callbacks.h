@@ -15,7 +15,7 @@ void on_buttonMca_clicked(GtkWidget *button,gpointer user_data);
 void on_buttonDeca_clicked(GtkWidget *button,gpointer user_data);
 
 void
-on_buttonMcp_clicked                   (GtkButton       *button,
+on_buttonMcp_clicked                   (GtkWidget       *button,
                                         gpointer         user_data);
 
 void on_buttonDecp_clicked(GtkWidget *button,gpointer user_data);
@@ -25,15 +25,15 @@ void on_buttonMcag_clicked(GtkWidget *button,gpointer user_data);
 void on_buttonDecag_clicked(GtkWidget *button,gpointer user_data);
 
 void
-on_buttonagac_clicked                  (GtkButton       *button,
+on_buttonagac_clicked                  (GtkWidget       *button,
                                         gpointer         user_data);
 
 void
-on_buttonagmc_clicked                  (GtkButton       *button,
+on_buttonagmc_clicked                  (GtkWidget       *button,
                                         gpointer         user_data);
 
 void
-on_buttonagsc_clicked                  (GtkButton       *button,
+on_buttonagsc_clicked                  (GtkWidget       *button,
                                         gpointer         user_data);
 
 void on_buttonnc_clicked (GtkWidget *objet_graphique,gpointer user_data);
@@ -53,7 +53,7 @@ void on_button1_clicked(GtkWidget *button,gpointer user_data);
 void on_buttonaag_clicked(GtkWidget *button,gpointer user_data);
 
 void
-on_buttonaffcat_clicked                (GtkButton       *button,
+on_buttonaffcat_clicked                (GtkWidget       *button,
                                         gpointer         user_data);
 
 void on_buttonajcat_clicked(GtkWidget *button,gpointer user_data);
@@ -99,3 +99,130 @@ void on_buttonrmlv_clicked(GtkWidget *button,gpointer user_data);
 void on_buttoncslv_clicked(GtkWidget *button,gpointer user_data);
 
 void on_buttonrslv_clicked(GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrajcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncajcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncsvcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrsvcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrmvcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncmvcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonafmvcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncajhcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrcahjcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncshcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrshcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrmhcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonafmhcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncmhcat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrajvocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonajvocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonsvocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrvocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonafvocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonrmvocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttoncmovocat_clicked (GtkWidget *button,gpointer user_data);
+
+void
+on_buttonconfmag_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretmag_clicked                (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonconfajc_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretajgc_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonlogmc_clicked                 (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretmc_clicked                 (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonconfmodc_clicked              (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretmodc_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonconfsuppc_clicked             (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretsuppc_clicked              (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttoncmcp_clicked                  (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonrmcp_clicked                  (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretutil_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonconfchcag_clicked             (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonretouuur_clicked              (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonalc_clicked                   (GtkWidget       *button,
+                                        gpointer         user_data);

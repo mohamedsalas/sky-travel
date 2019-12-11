@@ -17,7 +17,7 @@ enum
 	COLUMNS
 };
 
-void afficher_agents(GtkWidget *liste)
+void afficher_clients(GtkWidget *liste)
 {
 	GtkCellRenderer *renderer;
 	GtkTreeViewColumn *column;
@@ -63,7 +63,7 @@ void afficher_agents(GtkWidget *liste)
 
 	store=gtk_list_store_new(COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 
-	f=fopen("/home/welfi/Desktop/sky-travel/src/agents.txt","r");
+	f=fopen("/home/welfi/Desktop/sky-travel/src/clients.txt","r");
 
 	if(f==NULL)
 	{
@@ -75,7 +75,7 @@ void afficher_agents(GtkWidget *liste)
 		{
 			gtk_list_store_append(store, &iter);
 			gtk_list_store_set(store, &iter, NOM, nom, LOGIN, login, PASSWORD, password, EMAIL, email, CIN, cin, NUM, num, -1);
-		}                                           
+		}
 	}
 	fclose(f);
 	gtk_tree_view_set_model(GTK_TREE_VIEW(liste), GTK_TREE_MODEL(store));
