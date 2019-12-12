@@ -234,3 +234,19 @@ on_buttonAffCatPromo_clicked           (GtkWidget       *button,
 void
 on_buttonCc_clicked                    (GtkWidget       *button,
                                         gpointer         user_data);
+
+void
+on_buttonAffiRes_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonAr_clicked                    (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonret0002_clicked               (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonAjhres_clicked                (GtkWidget       *button,
+                                        gpointer         user_data);

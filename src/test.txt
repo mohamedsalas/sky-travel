@@ -1,0 +1,70 @@
+GtkWidget *window1,*treeview,*combobox1,*combobox2;
+	FILE*f;
+	FILE*ftemp;
+	FILE*f1;
+	voyage vo;
+	vol v;
+	lv lv;
+	hotel h;
+	nouveau n;
+	ftemp=fopen("/home/welfi/Desktop/sky-travel/src/temp11.txt","r");
+	window1=lookup_widget(button,"interface3");
+	combobox1=lookup_widget(window1,"comboboxtype");
+	combobox2=lookup_widget(window1,"comboboxchoix");
+	fscanf(ftemp,"%s %s %s %s %s %s %d\n",n.nom,n.login,n.password,n.email,n.cin,n.num,&n.id);
+	if(strcmp("Voyage Organisé",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox1)))==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/voyage.txt","r");
+		while(fscanf(f,"%s %s %s %s %s %d %d %s %d\n",vo.dest,vo.date_a,vo.date_r,vo.nom_hotel,vo.type_trans,&vo.prix,&vo.disp,vo.pro,&vo.id)!=EOF)
+		{
+			if(strcmp(vo.dest,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)))==0)
+			{
+				f1=fopen("/home/welfi/Desktop/sky-travel/src/reservationvo.txt","a+");
+				fprintf(f1,"%s %s %s %s %s %s %s %d %d %s %d\n",n.login,n.password,vo.dest,vo.date_a,vo.date_r,vo.nom_hotel,vo.type_trans,vo.prix,vo.disp,vo.pro,vo.id);
+				fclose(f1);
+			}
+		}
+		fclose(f);
+	}
+	else if(strcmp("Vol",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox1)))==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/vol.txt","r");
+		while(fscanf(f,"%s %s %s %s %s %s %d\n",v.dep,v.dest,v.comp,v.date,v.prix,v.pro,&v.id)!=EOF)
+		{
+			if(strcmp(v.dest,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)))==0)
+			{
+				f1=fopen("/home/welfi/Desktop/sky-travel/src/reservationvol.txt","a+");
+				fprintf(f1,"%s %s %s %s %s %s %s %s %d\n",n.login,n.password,v.dep,v.dest,v.comp,v.date,v.prix,v.pro,v.id);
+				fclose(f1);
+			}
+		}
+		fclose(f);
+	}
+	else if(strcmp("Hébergement",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox1)))==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/hotel.txt","r");
+		while(fscanf(f,"%s %s %s %d %d %d %d %d %d %d %d %d %d %d %d %s %d\n",h.nom,h.lieu,h.nbr_etoile,&h.sing.disp,&h.sing.prix_pd,&h.sing.prix_pc,&h.sing.prix_dp,&h.doub.disp,&h.doub.prix_pd,&h.doub.prix_pc,&h.doub.prix_dp,&h.swe.disp,&h.swe.prix_pd,&h.swe.prix_pc,&h.swe.prix_dp,h.promo,&h.id)!=EOF)
+		{
+			if(strcmp(h.nom,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)))==0)
+			{
+				f1=fopen("/home/welfi/Desktop/sky-travel/src/reservationheb.txt","a+");
+				fprintf(f1,"%s %s %s %s %s %d %d %d %d %d %d %d %d %d %d %d %d %s %d\n",n.login,n.password,h.nom,h.lieu,h.nbr_etoile,h.sing.disp,h.sing.prix_pd,h.sing.prix_pc,h.sing.prix_dp,h.doub.disp,h.doub.prix_pd,h.doub.prix_pc,h.doub.prix_dp,h.swe.disp,h.swe.prix_pd,h.swe.prix_pc,h.swe.prix_dp,h.promo,h.id);
+				fclose(f1);
+			}
+		}
+		fclose(f);
+	}
+	else if(strcmp("Location Voiture",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox1)))==0)
+	{
+		f=fopen("/home/welfi/Desktop/sky-travel/src/lv.txt","r");
+		while(fscanf(f,"%s %s %s %s %s %s %d\n",lv.type,lv.nch,lv.date_a,lv.date_r,lv.prix,lv.promo,&lv.id)!=EOF)
+		{
+			if(strcmp(lv.type,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)))==0)
+			{
+				f1=fopen("/home/welfi/Desktop/sky-travel/src/reservationlv.txt","a+");
+				fprintf(f1,"%s %s %s %s %s %s %s %s %d\n",n.login,n.password,lv.type,lv.nch,lv.date_a,lv.date_r,lv.prix,lv.promo,lv.id);
+				fclose(f1);
+			}
+		}
+		fclose(f);
+	}

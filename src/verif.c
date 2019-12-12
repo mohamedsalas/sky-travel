@@ -126,7 +126,7 @@ void ajouter_hotel(hotel h)
 {
 	FILE*f;
 	f=fopen("/home/welfi/Desktop/sky-travel/src/hotel.txt","a+");
-	fprintf(f,"%s %s %s %s %d %d %d %d %d %d %d %d %d %d %d %d %s %d\n",h.nom,h.lieu,h.nbr_etoile,h.sing.disp,h.sing.prix_pd,h.sing.prix_pc,h.sing.prix_dp,h.doub.disp,h.doub.prix_pd,h.doub.prix_pc,h.doub.prix_dp,h.swe.disp,h.swe.prix_pd,h.swe.prix_pc,h.swe.prix_dp,h.promo,&h.id);
+	fprintf(f,"%s %s %s %d %d %d %d %d %d %d %d %d %d %d %d %s %d\n",h.nom,h.lieu,h.nbr_etoile,h.sing.disp,h.sing.prix_pd,h.sing.prix_pc,h.sing.prix_dp,h.doub.disp,h.doub.prix_pd,h.doub.prix_pc,h.doub.prix_dp,h.swe.disp,h.swe.prix_pd,h.swe.prix_pc,h.swe.prix_dp,h.promo,h.id);
 	fclose(f);
 }
 void supprimerhotel(char lieu[],char nom[])

@@ -50,7 +50,10 @@ typedef struct
 
 
 }voyage;
-
+typedef struct reshotel
+{
+	char login[50],password[50],nom[50],nb_e[50],type_c[50],type_p[50],date_a[50],date_r[50];
+}reshotel;
 
 
 
