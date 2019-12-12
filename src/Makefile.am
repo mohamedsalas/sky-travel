@@ -14,7 +14,11 @@ sky_travel_SOURCES = \
 	callbacks.c callbacks.h \
 	verif.c verif.h \
 	agents.c agents.h \
-	clients.c clients.h
+	clients.c clients.h \
+	lv.c lv.h \
+	heb.c heb.h \
+	vol.c vol.h \
+	vo.c vo.h
 
 sky_travel_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

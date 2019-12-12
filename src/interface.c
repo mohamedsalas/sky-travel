@@ -860,9 +860,9 @@ create_interface6 (void)
   GtkWidget *label48;
   GtkWidget *fixed17;
   GtkWidget *treeview4;
-  GtkWidget *buttonalc;
   GtkWidget *buttonagmc;
   GtkWidget *buttonagsc;
+  GtkWidget *buttonalc;
   GtkWidget *buttonagac;
   GtkWidget *label49;
   GtkWidget *fixed22;
@@ -871,9 +871,9 @@ create_interface6 (void)
   GtkWidget *entry11;
   GtkWidget *buttonmcat;
   GtkWidget *buttonajcat;
+  GtkWidget *buttonscat;
   GtkWidget *buttonaffcat;
   GtkWidget *combobox3;
-  GtkWidget *buttonscat;
   GtkWidget *label50;
   GtkWidget *empty_notebook_page;
   GtkWidget *label51;
@@ -973,11 +973,6 @@ create_interface6 (void)
   gtk_fixed_put (GTK_FIXED (fixed17), treeview4, 8, 32);
   gtk_widget_set_size_request (treeview4, 616, 296);
 
-  buttonalc = gtk_button_new_with_mnemonic (_("Afficher"));
-  gtk_widget_show (buttonalc);
-  gtk_fixed_put (GTK_FIXED (fixed17), buttonalc, 16, 352);
-  gtk_widget_set_size_request (buttonalc, 88, 40);
-
   buttonagmc = gtk_button_new_with_mnemonic (_("Modifier"));
   gtk_widget_show (buttonagmc);
   gtk_fixed_put (GTK_FIXED (fixed17), buttonagmc, 280, 352);
@@ -987,6 +982,11 @@ create_interface6 (void)
   gtk_widget_show (buttonagsc);
   gtk_fixed_put (GTK_FIXED (fixed17), buttonagsc, 416, 352);
   gtk_widget_set_size_request (buttonagsc, 88, 40);
+
+  buttonalc = gtk_button_new_with_mnemonic (_("Afficher"));
+  gtk_widget_show (buttonalc);
+  gtk_fixed_put (GTK_FIXED (fixed17), buttonalc, 16, 352);
+  gtk_widget_set_size_request (buttonalc, 88, 40);
 
   buttonagac = gtk_button_new_with_mnemonic (_("Ajouter"));
   gtk_widget_show (buttonagac);
@@ -1027,6 +1027,11 @@ create_interface6 (void)
   gtk_fixed_put (GTK_FIXED (fixed22), buttonajcat, 144, 400);
   gtk_widget_set_size_request (buttonajcat, 88, 32);
 
+  buttonscat = gtk_button_new_with_mnemonic (_("Supprimer"));
+  gtk_widget_show (buttonscat);
+  gtk_fixed_put (GTK_FIXED (fixed22), buttonscat, 392, 400);
+  gtk_widget_set_size_request (buttonscat, 88, 32);
+
   buttonaffcat = gtk_button_new_with_mnemonic (_("Afficher"));
   gtk_widget_show (buttonaffcat);
   gtk_fixed_put (GTK_FIXED (fixed22), buttonaffcat, 24, 400);
@@ -1041,11 +1046,6 @@ create_interface6 (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (combobox3), _("H\303\251bergement"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (combobox3), _("Excurtion"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (combobox3), _("Location Voiture"));
-
-  buttonscat = gtk_button_new_with_mnemonic (_("Supprimer"));
-  gtk_widget_show (buttonscat);
-  gtk_fixed_put (GTK_FIXED (fixed22), buttonscat, 392, 400);
-  gtk_widget_set_size_request (buttonscat, 88, 32);
 
   label50 = gtk_label_new (_("Catalogue"));
   gtk_widget_show (label50);
@@ -1073,14 +1073,14 @@ create_interface6 (void)
   g_signal_connect ((gpointer) buttonDecag, "clicked",
                     G_CALLBACK (on_buttonDecag_clicked),
                     NULL);
-  g_signal_connect ((gpointer) buttonalc, "clicked",
-                    G_CALLBACK (on_buttonalc_clicked),
-                    NULL);
   g_signal_connect ((gpointer) buttonagmc, "clicked",
                     G_CALLBACK (on_buttonagmc_clicked),
                     NULL);
   g_signal_connect ((gpointer) buttonagsc, "clicked",
                     G_CALLBACK (on_buttonagsc_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonalc, "clicked",
+                    G_CALLBACK (on_buttonalc_clicked),
                     NULL);
   g_signal_connect ((gpointer) buttonagac, "clicked",
                     G_CALLBACK (on_buttonagac_clicked),
@@ -1094,11 +1094,11 @@ create_interface6 (void)
   g_signal_connect ((gpointer) buttonajcat, "clicked",
                     G_CALLBACK (on_buttonajcat_clicked),
                     NULL);
-  g_signal_connect ((gpointer) buttonaffcat, "clicked",
-                    G_CALLBACK (on_buttonaffcat_clicked),
-                    NULL);
   g_signal_connect ((gpointer) buttonscat, "clicked",
                     G_CALLBACK (on_buttonscat_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonaffcat, "clicked",
+                    G_CALLBACK (on_buttonaffcat_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -1122,9 +1122,9 @@ create_interface6 (void)
   GLADE_HOOKUP_OBJECT (interface6, label48, "label48");
   GLADE_HOOKUP_OBJECT (interface6, fixed17, "fixed17");
   GLADE_HOOKUP_OBJECT (interface6, treeview4, "treeview4");
-  GLADE_HOOKUP_OBJECT (interface6, buttonalc, "buttonalc");
   GLADE_HOOKUP_OBJECT (interface6, buttonagmc, "buttonagmc");
   GLADE_HOOKUP_OBJECT (interface6, buttonagsc, "buttonagsc");
+  GLADE_HOOKUP_OBJECT (interface6, buttonalc, "buttonalc");
   GLADE_HOOKUP_OBJECT (interface6, buttonagac, "buttonagac");
   GLADE_HOOKUP_OBJECT (interface6, label49, "label49");
   GLADE_HOOKUP_OBJECT (interface6, fixed22, "fixed22");
@@ -1133,9 +1133,9 @@ create_interface6 (void)
   GLADE_HOOKUP_OBJECT (interface6, entry11, "entry11");
   GLADE_HOOKUP_OBJECT (interface6, buttonmcat, "buttonmcat");
   GLADE_HOOKUP_OBJECT (interface6, buttonajcat, "buttonajcat");
+  GLADE_HOOKUP_OBJECT (interface6, buttonscat, "buttonscat");
   GLADE_HOOKUP_OBJECT (interface6, buttonaffcat, "buttonaffcat");
   GLADE_HOOKUP_OBJECT (interface6, combobox3, "combobox3");
-  GLADE_HOOKUP_OBJECT (interface6, buttonscat, "buttonscat");
   GLADE_HOOKUP_OBJECT (interface6, label50, "label50");
   GLADE_HOOKUP_OBJECT (interface6, label51, "label51");
   GLADE_HOOKUP_OBJECT (interface6, label52, "label52");

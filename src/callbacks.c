@@ -12,6 +12,10 @@
 #include "verif.h"
 #include "agents.h"
 #include "clients.h"
+#include "vol.h"
+#include "vo.h"
+#include "heb.h"
+#include "lv.h"
 
 void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data)
 {
@@ -668,7 +672,26 @@ void
 on_buttonaffcat_clicked                (GtkWidget       *button,
                                         gpointer         user_data)
 {
-
+	GtkWidget *window1,*treeview,*combobox;
+	window1=lookup_widget(button,"interface6");
+	treeview=lookup_widget(window1,"treeview5");
+	combobox=lookup_widget(window1,"combobox3");
+	if(strcmp("Voyage Organisé",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_vo(treeview);
+	}
+	else if(strcmp("Vol",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_vol(treeview);
+	}
+	else if(strcmp("Hébergement",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_heb(treeview);
+	}
+	else if(strcmp("Location Voiture",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_lv(treeview);
+	}
 }
 
 

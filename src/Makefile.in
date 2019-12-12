@@ -101,7 +101,8 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_sky_travel_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
 	interface.$(OBJEXT) callbacks.$(OBJEXT) verif.$(OBJEXT) \
-	agents.$(OBJEXT) clients.$(OBJEXT)
+	agents.$(OBJEXT) clients.$(OBJEXT) lv.$(OBJEXT) heb.$(OBJEXT) \
+	vol.$(OBJEXT) vo.$(OBJEXT)
 sky_travel_OBJECTS = $(am_sky_travel_OBJECTS)
 am__DEPENDENCIES_1 =
 sky_travel_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -285,7 +286,11 @@ sky_travel_SOURCES = \
 	callbacks.c callbacks.h \
 	verif.c verif.h \
 	agents.c agents.h \
-	clients.c clients.h
+	clients.c clients.h \
+	lv.c lv.h \
+	heb.c heb.h \
+	vol.c vol.h \
+	vo.c vo.h
 
 sky_travel_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
@@ -377,10 +382,14 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/agents.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/clients.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/heb.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lv.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/support.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/verif.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vol.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
