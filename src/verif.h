@@ -17,6 +17,7 @@ typedef struct lv
 	char date_a[50];
 	char date_r[50];
 	char prix[50];
+	char promo[50];
 	int id;
 }lv;
 typedef struct
@@ -37,12 +38,14 @@ typedef struct
 {
 	char nom[50],nbr_etoile[50],lieu[50];
 	chambre sing,doub,swe;
+	char promo[50];
 	int id;
 }hotel;
 typedef struct
 {
 	char dest[50],date_a[50],pro[10],date_r[50],nom_hotel[50],type_trans[50];	
 	int prix,disp;
+	char promo[50];
 	int id;
 
 

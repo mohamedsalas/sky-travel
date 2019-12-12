@@ -15,7 +15,7 @@ enum
 	COLUMNS
 };
 
-void afficher_heb(GtkWidget *liste)
+void afficher_hebp(GtkWidget *liste)
 {
 	GtkCellRenderer *renderer;
 	GtkTreeViewColumn *column;
@@ -73,8 +73,11 @@ void afficher_heb(GtkWidget *liste)
 	{
 		while(fscanf(f,"%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %d\n",nom,etoile,lieu,sing1,doub1,swe1,nom1,etoile1,lieu1,sing2,doub2,swe2,nom2,etoile2,lieu2,promo,&id)!=EOF)
 		{
-			gtk_list_store_append(store, &iter);
-			gtk_list_store_set(store, &iter, NOM, nom, ETOILE, etoile, LIEU, lieu, ID, id, -1);
+			if(strcmp(promo,"1")==0)
+			{
+				gtk_list_store_append(store, &iter);
+				gtk_list_store_set(store, &iter, NOM, nom, ETOILE, etoile, LIEU, lieu, ID, id, -1);
+			}
 		}                                           
 	}
 	fclose(f);

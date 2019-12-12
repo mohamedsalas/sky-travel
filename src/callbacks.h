@@ -226,3 +226,11 @@ on_buttonretouuur_clicked              (GtkWidget       *button,
 void
 on_buttonalc_clicked                   (GtkWidget       *button,
                                         gpointer         user_data);
+
+void
+on_buttonAffCatPromo_clicked           (GtkWidget       *button,
+                                        gpointer         user_data);
+
+void
+on_buttonCc_clicked                    (GtkWidget       *button,
+                                        gpointer         user_data);

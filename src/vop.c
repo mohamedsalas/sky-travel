@@ -19,7 +19,7 @@ enum
 	COLUMNS
 };
 
-void afficher_vo(GtkWidget *liste)
+void afficher_vop(GtkWidget *liste)
 {
 	GtkCellRenderer *renderer;
 	GtkTreeViewColumn *column;
@@ -86,8 +86,11 @@ void afficher_vo(GtkWidget *liste)
 	{
 		while(fscanf(f,"%s %s %s %s %s %s %s %s %s %d\n",destination,date_a,promotion,date_r,hotel,trans,prix,dispo,promo,&id)!=EOF)
 		{
-			gtk_list_store_append(store, &iter);
-			gtk_list_store_set(store, &iter, DESTINATION, destination, DATEA, date_a, DATER, date_r, HOTEL, hotel, TRANS, trans, PRIX, prix, DISPO, dispo, ID, id, -1);
+			if(strcmp(promo,"1")==0)
+			{
+				gtk_list_store_append(store, &iter);
+				gtk_list_store_set(store, &iter, DESTINATION, destination, DATEA, date_a, DATER, date_r, HOTEL, hotel, TRANS, trans, PRIX, prix, DISPO, dispo, ID, id, -1);
+			}
 		}                                           
 	}
 	fclose(f);

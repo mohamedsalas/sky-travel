@@ -144,23 +144,6 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonCc">
-	  <property name="width_request">200</property>
-	  <property name="height_request">32</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Consulter nos catalogues</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	</widget>
-	<packing>
-	  <property name="x">296</property>
-	  <property name="y">328</property>
-	</packing>
-      </child>
-
-      <child>
 	<widget class="GtkLabel" id="label63">
 	  <property name="width_request">224</property>
 	  <property name="height_request">40</property>
@@ -219,6 +202,24 @@
 	<packing>
 	  <property name="x">48</property>
 	  <property name="y">320</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonCc">
+	  <property name="width_request">200</property>
+	  <property name="height_request">32</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Consulter nos catalogues</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonCc_clicked" last_modification_time="Thu, 12 Dec 2019 12:17:30 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">296</property>
+	  <property name="y">328</property>
 	</packing>
       </child>
     </widget>
@@ -11968,6 +11969,43 @@ num</property>
 	<packing>
 	  <property name="x">480</property>
 	  <property name="y">384</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkComboBox" id="combobox999">
+	  <property name="width_request">144</property>
+	  <property name="height_request">32</property>
+	  <property name="visible">True</property>
+	  <property name="items" translatable="yes">Vol
+Location Voiture
+Hébergement
+Excurtion
+Voyage Organisé</property>
+	  <property name="add_tearoffs">False</property>
+	  <property name="focus_on_click">True</property>
+	</widget>
+	<packing>
+	  <property name="x">80</property>
+	  <property name="y">368</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonAffCatPromo">
+	  <property name="width_request">66</property>
+	  <property name="height_request">29</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Afficher</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonAffCatPromo_clicked" last_modification_time="Thu, 12 Dec 2019 10:12:31 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">272</property>
+	  <property name="y">368</property>
 	</packing>
       </child>
     </widget>

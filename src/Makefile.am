@@ -18,7 +18,11 @@ sky_travel_SOURCES = \
 	lv.c lv.h \
 	heb.c heb.h \
 	vol.c vol.h \
-	vo.c vo.h
+	vo.c vo.h \
+	lvp.c lvp.h \
+	hebp.c hebp.h \
+	volp.c volp.h \
+	vop.c vop.h
 
 sky_travel_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

@@ -16,6 +16,10 @@
 #include "vo.h"
 #include "heb.h"
 #include "lv.h"
+#include "volp.h"
+#include "vop.h"
+#include "hebp.h"
+#include "lvp.h"
 
 void on_buttonLogin_clicked(GtkWidget *objet_graphique,gpointer user_data)
 {
@@ -3249,5 +3253,44 @@ void on_buttonalc_clicked(GtkWidget *button,gpointer user_data)
 	window6=lookup_widget(button,"interface6");
 	treeview3=lookup_widget(button,"treeview4");
 	afficher_clients(treeview3);
+}
+
+
+void on_buttonAffCatPromo_clicked(GtkWidget *button,gpointer user_data)
+{
+	GtkWidget *window1,*combobox,*treeview;
+	window1=lookup_widget(button,"interface32");
+	treeview=lookup_widget(button,"treeview6");
+	combobox=lookup_widget(button,"combobox999");
+	if(strcmp("Voyage Organisé",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_vop(treeview);
+	}
+	else if(strcmp("Vol",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_volp(treeview);
+	}
+	else if(strcmp("Hébergement",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_hebp(treeview);
+	}
+	else if(strcmp("Location Voiture",gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)))==0)
+	{
+		afficher_lvp(treeview);
+	}
+	
+}
+
+
+void
+on_buttonCc_clicked                    (GtkWidget       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *window1,*window2;
+	window1=lookup_widget(button,"interface1");
+	window2=lookup_widget(button,"interface32");
+	gtk_widget_destroy(window1);
+	window2=create_interface32();
+	gtk_widget_show(window2);
 }
 

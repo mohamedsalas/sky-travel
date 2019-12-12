@@ -36,10 +36,10 @@ create_interface1 (void)
   GtkWidget *labelMdp;
   GtkWidget *labelNom;
   GtkWidget *label1;
-  GtkWidget *buttonCc;
   GtkWidget *label63;
   GtkWidget *buttonLogin;
   GtkWidget *buttonnc;
+  GtkWidget *buttonCc;
 
   interface1 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_widget_set_size_request (interface1, 500, 400);
@@ -77,11 +77,6 @@ create_interface1 (void)
   gtk_fixed_put (GTK_FIXED (fixed1), label1, 8, 272);
   gtk_widget_set_size_request (label1, 216, 40);
 
-  buttonCc = gtk_button_new_with_mnemonic (_("Consulter nos catalogues"));
-  gtk_widget_show (buttonCc);
-  gtk_fixed_put (GTK_FIXED (fixed1), buttonCc, 296, 328);
-  gtk_widget_set_size_request (buttonCc, 200, 32);
-
   label63 = gtk_label_new ("");
   gtk_widget_show (label63);
   gtk_fixed_put (GTK_FIXED (fixed1), label63, 160, 224);
@@ -97,11 +92,19 @@ create_interface1 (void)
   gtk_fixed_put (GTK_FIXED (fixed1), buttonnc, 48, 320);
   gtk_widget_set_size_request (buttonnc, 144, 40);
 
+  buttonCc = gtk_button_new_with_mnemonic (_("Consulter nos catalogues"));
+  gtk_widget_show (buttonCc);
+  gtk_fixed_put (GTK_FIXED (fixed1), buttonCc, 296, 328);
+  gtk_widget_set_size_request (buttonCc, 200, 32);
+
   g_signal_connect ((gpointer) buttonLogin, "clicked",
                     G_CALLBACK (on_buttonLogin_clicked),
                     NULL);
   g_signal_connect ((gpointer) buttonnc, "clicked",
                     G_CALLBACK (on_buttonnc_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonCc, "clicked",
+                    G_CALLBACK (on_buttonCc_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -112,10 +115,10 @@ create_interface1 (void)
   GLADE_HOOKUP_OBJECT (interface1, labelMdp, "labelMdp");
   GLADE_HOOKUP_OBJECT (interface1, labelNom, "labelNom");
   GLADE_HOOKUP_OBJECT (interface1, label1, "label1");
-  GLADE_HOOKUP_OBJECT (interface1, buttonCc, "buttonCc");
   GLADE_HOOKUP_OBJECT (interface1, label63, "label63");
   GLADE_HOOKUP_OBJECT (interface1, buttonLogin, "buttonLogin");
   GLADE_HOOKUP_OBJECT (interface1, buttonnc, "buttonnc");
+  GLADE_HOOKUP_OBJECT (interface1, buttonCc, "buttonCc");
 
   return interface1;
 }
@@ -4780,6 +4783,8 @@ create_interface32 (void)
   GtkWidget *fixed49;
   GtkWidget *treeview6;
   GtkWidget *buttonretutil;
+  GtkWidget *combobox999;
+  GtkWidget *buttonAffCatPromo;
 
   interface32 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (interface32), _("window1"));
@@ -4798,8 +4803,26 @@ create_interface32 (void)
   gtk_fixed_put (GTK_FIXED (fixed49), buttonretutil, 480, 384);
   gtk_widget_set_size_request (buttonretutil, 66, 29);
 
+  combobox999 = gtk_combo_box_new_text ();
+  gtk_widget_show (combobox999);
+  gtk_fixed_put (GTK_FIXED (fixed49), combobox999, 80, 368);
+  gtk_widget_set_size_request (combobox999, 144, 32);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (combobox999), _("Vol"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (combobox999), _("Location Voiture"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (combobox999), _("H\303\251bergement"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (combobox999), _("Excurtion"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (combobox999), _("Voyage Organis\303\251"));
+
+  buttonAffCatPromo = gtk_button_new_with_mnemonic (_("Afficher"));
+  gtk_widget_show (buttonAffCatPromo);
+  gtk_fixed_put (GTK_FIXED (fixed49), buttonAffCatPromo, 272, 368);
+  gtk_widget_set_size_request (buttonAffCatPromo, 66, 29);
+
   g_signal_connect ((gpointer) buttonretutil, "clicked",
                     G_CALLBACK (on_buttonretutil_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonAffCatPromo, "clicked",
+                    G_CALLBACK (on_buttonAffCatPromo_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -4807,6 +4830,8 @@ create_interface32 (void)
   GLADE_HOOKUP_OBJECT (interface32, fixed49, "fixed49");
   GLADE_HOOKUP_OBJECT (interface32, treeview6, "treeview6");
   GLADE_HOOKUP_OBJECT (interface32, buttonretutil, "buttonretutil");
+  GLADE_HOOKUP_OBJECT (interface32, combobox999, "combobox999");
+  GLADE_HOOKUP_OBJECT (interface32, buttonAffCatPromo, "buttonAffCatPromo");
 
   return interface32;
 }

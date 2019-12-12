@@ -102,7 +102,8 @@ PROGRAMS = $(bin_PROGRAMS)
 am_sky_travel_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
 	interface.$(OBJEXT) callbacks.$(OBJEXT) verif.$(OBJEXT) \
 	agents.$(OBJEXT) clients.$(OBJEXT) lv.$(OBJEXT) heb.$(OBJEXT) \
-	vol.$(OBJEXT) vo.$(OBJEXT)
+	vol.$(OBJEXT) vo.$(OBJEXT) lvp.$(OBJEXT) hebp.$(OBJEXT) \
+	volp.$(OBJEXT) vop.$(OBJEXT)
 sky_travel_OBJECTS = $(am_sky_travel_OBJECTS)
 am__DEPENDENCIES_1 =
 sky_travel_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -290,7 +291,11 @@ sky_travel_SOURCES = \
 	lv.c lv.h \
 	heb.c heb.h \
 	vol.c vol.h \
-	vo.c vo.h
+	vo.c vo.h \
+	lvp.c lvp.h \
+	hebp.c hebp.h \
+	volp.c volp.h \
+	vop.c vop.h
 
 sky_travel_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
@@ -383,13 +388,17 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/clients.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/heb.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hebp.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lv.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lvp.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/support.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/verif.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vo.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vol.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/volp.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vop.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
