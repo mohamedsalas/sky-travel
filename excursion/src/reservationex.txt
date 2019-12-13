@@ -1,0 +1,3 @@
+kl uh dali 1/1/1990 1 Sans_guide_touristique 5,00 2
+iuh ibk dali 1/1/1990 5 Avec_guide_touristique 25,00 4
+i:f kh dali 1/1/1990 4 Avec_guide_touristique 20,00 5
